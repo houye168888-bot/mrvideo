@@ -1,0 +1,10 @@
+# 项目数据（非站点资源，不上传）
+.workbuddy/
+
+# 系统/编辑器
+.DS_Store
+Thumbs.db
+
+# 本地环境
+node_modules/
+*.log

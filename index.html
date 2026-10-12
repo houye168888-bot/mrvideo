@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr.Video 传媒 | 缅甸新媒体一站式服务专家</title>
+  <meta name="description" content="Mr.Video 传媒，扎根缅甸曼德勒的新媒体一站式服务机构。提供企业宣传、社交媒体代运营、新媒体人才培训、短视频电商与网红孵化全链路服务。只做有价值的流量。" />
+  <meta name="keywords" content="缅甸新媒体, 曼德勒短视频, 社交媒体代运营, 网红孵化, 新媒体培训, Myanmar new media, Mr.Video, TikTok, Facebook" />
+
+  <!-- Open Graph / 社交分享 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mr.Video 传媒 | 缅甸新媒体一站式服务专家" />
+  <meta property="og:description" content="扎根缅甸曼德勒的中国资深新媒体团队，提供企业宣传、社媒代运营、人才培训、短视频电商与网红孵化全链路服务。" />
+  <meta property="og:image" content="https://picsum.photos/seed/mrvideo-og/1200/630" />
+  <meta property="og:url" content="https://www.mrvideo.mm/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- TODO: 接入 Google Analytics（缅甸市场主要投 Facebook，可改用 Meta Pixel / Meta Business 像素） -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config','G-XXXXXXX'); </script>
+  -->
+  <!-- TODO: 接入 Meta Pixel（Facebook 投放像素） -->
+  <!--
+  <script> !function(f,b,e,v,n,t,s){...fbq...}(); </script>
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ===================== 顶部导航栏 Header ===================== -->
+  <header class="site-header" id="top">
+    <div class="container nav-inner">
+      <a href="#top" class="brand" aria-label="Mr.Video 首页">
+        <img src="images/logo-horizontal.png" alt="Mr.Video 视频先生" class="brand-logo" onerror="this.onerror=null;this.src='images/logo-horizontal.jpg'" />
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="主导航">
+        <ul>
+          <li><a href="#top" class="active">首页</a></li>
+          <li><a href="#about">关于我们</a></li>
+          <li><a href="#services">核心业务</a></li>
+          <li><a href="#cases">精品案例</a></li>
+          <li><a href="#products">电商产品</a></li>
+          <li><a href="#training">培训学院</a></li>
+          <li><a href="#news">新闻动态</a></li>
+          <li><a href="#contact">联系我们</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contact" class="btn btn-cta">免费咨询 <span class="en">/ Free Consultation</span></a>
+
+      <button class="hamburger" id="hamburger" aria-label="打开菜单" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 手机端全屏抽屉菜单 -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <button class="drawer-close" id="drawerClose" aria-label="关闭菜单">&times;</button>
+    <nav class="drawer-nav" aria-label="移动端导航">
+      <a href="#top">首页</a>
+      <a href="#about">关于我们</a>
+      <a href="#services">核心业务</a>
+      <a href="#cases">精品案例</a>
+      <a href="#products">电商产品</a>
+      <a href="#training">培训学院</a>
+      <a href="#news">新闻动态</a>
+      <a href="#contact">联系我们</a>
+      <a href="#contact" class="btn btn-cta drawer-cta">免费咨询 / Free Consultation</a>
+    </nav>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <main>
+
+    <!-- ===================== 首屏 Banner / Hero ===================== -->
+    <section class="hero" id="home" aria-label="首屏">
+      <!-- 待替换：视频背景优先，海报图兜底。当前用深色渐变 + 占位海报图 -->
+      <div class="hero-bg">
+        <video class="hero-video" autoplay muted loop playsinline poster="https://picsum.photos/seed/mrvideo-hero/1920/1080">
+          <!-- TODO: 接入实拍视频 <source src="images/hero.mp4" type="video/mp4"> -->
+        </video>
+        <img class="hero-poster" src="https://picsum.photos/seed/mrvideo-hero/1920/1080" alt="Mr.Video 拍摄现场占位图" loading="eager" />
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="hero-slides container">
+        <!-- Slide 1 -->
+        <article class="hero-slide is-active">
+          <p class="hero-eyebrow">缅甸新媒体一站式服务专家</p>
+          <h1 class="hero-title">只做<span class="gold">有价值</span>的流量</h1>
+          <p class="hero-sub">One-stop New Media Service Expert in Myanmar</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-gold">获取方案</a>
+            <a href="#services" class="btn btn-outline">了解业务</a>
+          </div>
+          <ul class="trust-tags">
+            <li>中国资深团队</li>
+            <li>一站式全链服务</li>
+            <li>丰富行业经验</li>
+          </ul>
+        </article>
+
+        <!-- Slide 2 -->
+        <article class="hero-slide">
+          <p class="hero-eyebrow">SHORT VIDEO E-COMMERCE</p>
+          <h1 class="hero-title">把<span class="gold">流量</span>变成<span class="gold">销量</span></h1>
+          <p class="hero-sub">短视频电商增长 · 直播带货 · 投流转化</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-gold">获取方案</a>
+            <a href="#services" class="btn btn-outline">了解业务</a>
+          </div>
+          <ul class="trust-tags">
+            <li>内容制作</li>
+            <li>店铺运营</li>
+            <li>投流转化</li>
+          </ul>
+        </article>
+
+        <!-- Slide 3 -->
+        <article class="hero-slide">
+          <p class="hero-eyebrow">NEW MEDIA TALENT TRAINING</p>
+          <h1 class="hero-title">培养缅甸本土<span class="gold">新媒体人才</span></h1>
+          <p class="hero-sub">中国导师面授 · 理论+实操 · 推荐工作</p>
+          <div class="hero-actions">
+            <a href="#training" class="btn btn-gold">咨询报名</a>
+            <a href="#about" class="btn btn-outline">了解我们</a>
+          </div>
+          <ul class="trust-tags">
+            <li>7 天实战营</li>
+            <li>终身复训</li>
+            <li>结业推荐</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="hero-dots" id="heroDots" role="tablist" aria-label="Banner 切换"></div>
+
+      <a href="#about" class="scroll-arrow" aria-label="向下滚动">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </a>
+    </section>
+
+    <!-- ===================== 关于我们 About ===================== -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-head reveal">
+          <p class="eyebrow">ABOUT US</p>
+          <h2 class="section-title" id="about-title">关于我们</h2>
+        </div>
+        <div class="about-grid">
+          <!-- 左侧：公司简介正文 + 配图 -->
+          <div class="about-left reveal">
+            <p class="about-desc">
+              Mr.Video 是扎根缅甸曼德勒的新媒体一站式服务机构，由中国资深新媒体团队运营，业务覆盖企业宣传、社交媒体代运营、新媒体人才培训、短视频电商与网红孵化，为企业提供从策划、拍摄、剪辑、投放到人才培养的全链路服务，秉承"只做有价值的流量"的理念，帮助缅甸企业与品牌实现真实增长。
+            </p>
+            <div class="about-media">
+              <!-- 待替换：拍摄/团队工作场景图 -->
+              <img src="https://picsum.photos/seed/mrvideo-team/800/600" alt="Mr.Video 团队工作场景" loading="lazy" />
+            </div>
+          </div>
+          <!-- 右侧：企业定位 + 企业理念，从上到下排列 -->
+          <div class="about-right reveal">
+            <div class="positioning">
+              <p class="positioning-label">企业定位 · Positioning</p>
+              <p class="positioning-cn">新媒体一站式服务专家</p>
+              <p class="positioning-en">One-stop new media service expert in Myanmar</p>
+            </div>
+            <blockquote class="quote">
+              <span class="quote-label">企业理念 · Philosophy</span>
+              只做有价值的流量<br />
+              <span class="en">Only create valuable traffic</span>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 核心业务 Services ===================== -->
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">OUR SERVICES</p>
+          <h2 class="section-title" id="services-title">核心业务</h2>
+          <p class="section-sub">五大业务模块，覆盖新媒体全链路</p>
+        </div>
+
+        <div class="services-grid reveal">
+          <!-- 卡片 1 -->
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line><polygon points="10 8 15 10.5 10 13 10 8"></polygon></svg>
+            </span>
+            <h3 class="service-name">企业宣传</h3>
+            <p class="service-en">Corporate Promotion</p>
+            <p class="service-desc">企业宣传片、品牌广告、活动纪实的策划拍摄与后期制作，用影像讲好品牌故事。</p>
+            <a href="#contact" class="service-link">咨询方案 →</a>
+          </article>
+
+          <!-- 卡片 2 -->
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"></line><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"></line></svg>
+            </span>
+            <h3 class="service-name">社交媒体管家</h3>
+            <p class="service-en">Social Media Management</p>
+            <p class="service-desc">Facebook、TikTok、YouTube 等主流平台账号代运营，内容策划、短视频更新、粉丝增长与数据复盘全托管。</p>
+            <a href="#contact" class="service-link">咨询方案 →</a>
+          </article>
+
+          <!-- 卡片 3 -->
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            </span>
+            <h3 class="service-name">新媒体人才培训</h3>
+            <p class="service-en">New Media Talent Training</p>
+            <p class="service-desc">面向缅甸本地学员的拍摄剪辑与账号运营实战培训，中国导师面授，理论+实操，结业推荐工作。</p>
+            <a href="#contact" class="service-link">咨询方案 →</a>
+          </article>
+
+          <!-- 卡片 4 -->
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            </span>
+            <h3 class="service-name">短视频电商</h3>
+            <p class="service-en">Short Video E-commerce</p>
+            <p class="service-desc">短视频带货、直播电商的内容制作、店铺运营与投流转化，帮品牌把流量变成销量。</p>
+            <a href="#contact" class="service-link">咨询方案 →</a>
+          </article>
+
+          <!-- 卡片 5 -->
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle><polygon points="12 2 14.5 5 18 5.5 15.5 8.5 16 12 12 10 8 12 8.5 8.5 6 5.5 9.5 5 12 2"></polygon></svg>
+            </span>
+            <h3 class="service-name">网红孵化</h3>
+            <p class="service-en">Influencer Incubation</p>
+            <p class="service-desc">达人发掘、人设定位、内容孵化与商业变现，打造缅甸本土有影响力的网红 IP。</p>
+            <a href="#contact" class="service-link">咨询方案 →</a>
+          </article>
+        </div>
+
+        <!-- 服务套餐入口（占位） -->
+        <div class="plan-row reveal">
+          <p class="plan-row-title">服务套餐 <span class="en">/ Service Plans</span></p>
+          <div class="plan-cards">
+            <div class="plan-card">
+              <p class="plan-name">基础代运营</p>
+              <p class="plan-price"><span class="gold">【套餐详情待补充】</span></p>
+              <p class="plan-note">适合刚起步的本地中小企业</p>
+            </div>
+            <div class="plan-card">
+              <p class="plan-name">增长全案</p>
+              <p class="plan-price"><span class="gold">【套餐详情待补充】</span></p>
+              <p class="plan-note">策划+拍摄+投放一体化</p>
+            </div>
+            <div class="plan-card">
+              <p class="plan-name">企业定制</p>
+              <p class="plan-price"><span class="gold">【套餐详情待补充】</span></p>
+              <p class="plan-note">按业务目标定制方案</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 企业愿景 Vision ===================== -->
+    <section class="section vision" id="vision" aria-labelledby="vision-title">
+      <div class="container">
+        <div class="section-head light reveal">
+          <p class="eyebrow gold">OUR VISION</p>
+          <h2 class="section-title light" id="vision-title">企业愿景</h2>
+        </div>
+        <div class="vision-stats reveal">
+          <div class="stat">
+            <p class="stat-num" data-target="10000" data-suffix="+">0</p>
+            <p class="stat-label">培育新媒体人才</p>
+            <p class="stat-en">Cultivate new media talents</p>
+          </div>
+          <div class="stat">
+            <p class="stat-num" data-target="1000" data-suffix="+">0</p>
+            <p class="stat-label">服务企业</p>
+            <p class="stat-en">Serve enterprises</p>
+          </div>
+          <div class="stat">
+            <p class="stat-num" data-target="100" data-suffix="+">0</p>
+            <p class="stat-label">助力品牌发展</p>
+            <p class="stat-en">Boost brands</p>
+          </div>
+          <div class="stat">
+            <p class="stat-num" data-target="10" data-suffix="+">0</p>
+            <p class="stat-label">成就行业顶流</p>
+            <p class="stat-en">Build top influencers</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 企业优势 + 服务流程 ===================== -->
+    <section class="section advantages" id="advantages" aria-labelledby="adv-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">WHY CHOOSE US</p>
+          <h2 class="section-title" id="adv-title">企业优势</h2>
+        </div>
+
+        <div class="adv-grid reveal">
+          <article class="adv-card">
+            <span class="adv-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </span>
+            <h3>中国资深团队</h3>
+            <p class="en">Senior Team from China</p>
+            <p>核心成员来自中国一线新媒体公司，操盘过多个从 0 到百万粉丝的账号。</p>
+          </article>
+          <article class="adv-card">
+            <span class="adv-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.2 13.5 11 16 15.8 11"></polyline></svg>
+            </span>
+            <h3>丰富行业经验</h3>
+            <p class="en">Rich Industry Experience</p>
+            <p>深耕短视频、直播电商与社媒运营，熟悉中缅两地市场与平台规则。</p>
+          </article>
+          <article class="adv-card">
+            <span class="adv-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            </span>
+            <h3>一站式全链服务</h3>
+            <p class="en">One-stop Full-chain Service</p>
+            <p>策划、拍摄、剪辑、运营、投放、培训一体化，企业无需对接多个供应商。</p>
+          </article>
+        </div>
+
+        <!-- 一站式服务流程 -->
+        <div class="process reveal">
+          <p class="process-title">一站式服务流程 <span class="en">/ Service Process</span></p>
+          <ol class="timeline">
+            <li><span class="step-no">01</span><span class="step-name">需求诊断</span></li>
+            <li><span class="step-no">02</span><span class="step-name">方案策划</span></li>
+            <li><span class="step-no">03</span><span class="step-name">拍摄制作</span></li>
+            <li><span class="step-no">04</span><span class="step-name">账号运营</span></li>
+            <li><span class="step-no">05</span><span class="step-name">全域投放</span></li>
+            <li><span class="step-no">06</span><span class="step-name">数据复盘</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 精品案例 Cases ===================== -->
+    <section class="section cases" id="cases" aria-labelledby="cases-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">CASE STUDIES</p>
+          <h2 class="section-title" id="cases-title">精品案例</h2>
+          <p class="section-sub">真实数据，看得见的增长</p>
+        </div>
+
+        <div class="case-filter reveal" id="caseFilter" role="tablist" aria-label="案例分类筛选">
+          <button class="filter-btn is-active" data-filter="all">全部</button>
+          <button class="filter-btn" data-filter="promo">企业宣传</button>
+          <button class="filter-btn" data-filter="social">社媒运营</button>
+          <button class="filter-btn" data-filter="ecom">短视频电商</button>
+        </div>
+
+        <div class="case-grid reveal" id="caseGrid">
+          <article class="case-card" data-cat="social">
+            <div class="case-cover"><img src="https://picsum.photos/seed/case1/600/450" alt="餐饮品牌 TikTok 案例封面" loading="lazy" /></div>
+            <div class="case-body">
+              <h3>XX 餐饮品牌 TikTok 30 天涨粉 10 万</h3>
+              <p class="case-result"><span class="gold">涨粉 10 万</span> · 到店转化显著提升</p>
+            </div>
+          </article>
+          <article class="case-card" data-cat="promo">
+            <div class="case-cover"><img src="https://picsum.photos/seed/case2/600/450" alt="企业宣传片案例封面" loading="lazy" /></div>
+            <div class="case-body">
+              <h3>XX 制造企业品牌宣传片</h3>
+              <p class="case-result"><span class="gold">播放 50 万+</span> · 品牌形象升级</p>
+            </div>
+          </article>
+          <article class="case-card" data-cat="ecom">
+            <div class="case-cover"><img src="https://picsum.photos/seed/case3/600/450" alt="直播电商案例封面" loading="lazy" /></div>
+            <div class="case-body">
+              <h3>XX 美妆直播电商首月 GMV 破百万</h3>
+              <p class="case-result"><span class="gold">GMV ¥100万+</span> · 复购率 28%</p>
+            </div>
+          </article>
+          <article class="case-card" data-cat="social">
+            <div class="case-cover"><img src="https://picsum.photos/seed/case4/600/450" alt="社媒代运营案例封面" loading="lazy" /></div>
+            <div class="case-body">
+              <h3>XX 旅行社 Facebook 代运营</h3>
+              <p class="case-result"><span class="gold">互动率 +180%</span> · 咨询量翻倍</p>
+            </div>
+          </article>
+          <article class="case-card" data-cat="promo">
+            <div class="case-cover"><img src="https://picsum.photos/seed/case5/600/450" alt="活动纪实案例封面" loading="lazy" /></div>
+            <div class="case-body">
+              <h3>XX 品牌线下活动纪实</h3>
+              <p class="case-result"><span class="gold">覆盖 5 万+</span> · 话题曝光破圈</p>
+            </div>
+          </article>
+          <article class="case-card" data-cat="ecom">
+            <div class="case-cover"><img src="https://picsum.photos/seed/case6/600/450" alt="短视频带货案例封面" loading="lazy" /></div>
+            <div class="case-body">
+              <h3>XX 农产品短视频带货</h3>
+              <p class="case-result"><span class="gold">单条爆款 30 万+</span> · 助农增收</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="case-more reveal">
+          <a href="#contact" class="btn btn-outline-dark">查看更多案例</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 电商产品展示 Products ===================== -->
+    <section class="section products" id="products" aria-labelledby="products-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">E-COMMERCE PRODUCTS</p>
+          <h2 class="section-title" id="products-title">电商产品展示</h2>
+          <p class="section-sub">我们操盘带货的精选好物，覆盖多品类</p>
+        </div>
+
+        <div class="product-grid reveal">
+          <article class="product-card">
+            <div class="product-cover"><img src="https://picsum.photos/seed/prod1/500/500" alt="美妆护肤产品占位图" loading="lazy" /></div>
+            <div class="product-body">
+              <span class="product-cat">美妆护肤</span>
+              <h3>【产品名待补充】</h3>
+              <p class="product-desc">一句话卖点描述待补充。</p>
+              <div class="product-foot">
+                <span class="product-price"><span class="gold">价格待补充</span></span>
+                <a href="#contact" class="product-link">咨询下单 →</a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-cover"><img src="https://picsum.photos/seed/prod2/500/500" alt="食品饮料产品占位图" loading="lazy" /></div>
+            <div class="product-body">
+              <span class="product-cat">食品饮料</span>
+              <h3>【产品名待补充】</h3>
+              <p class="product-desc">一句话卖点描述待补充。</p>
+              <div class="product-foot">
+                <span class="product-price"><span class="gold">价格待补充</span></span>
+                <a href="#contact" class="product-link">咨询下单 →</a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-cover"><img src="https://picsum.photos/seed/prod3/500/500" alt="家居生活产品占位图" loading="lazy" /></div>
+            <div class="product-body">
+              <span class="product-cat">家居生活</span>
+              <h3>【产品名待补充】</h3>
+              <p class="product-desc">一句话卖点描述待补充。</p>
+              <div class="product-foot">
+                <span class="product-price"><span class="gold">价格待补充</span></span>
+                <a href="#contact" class="product-link">咨询下单 →</a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-cover"><img src="https://picsum.photos/seed/prod4/500/500" alt="数码电子产品占位图" loading="lazy" /></div>
+            <div class="product-body">
+              <span class="product-cat">数码电子</span>
+              <h3>【产品名待补充】</h3>
+              <p class="product-desc">一句话卖点描述待补充。</p>
+              <div class="product-foot">
+                <span class="product-price"><span class="gold">价格待补充</span></span>
+                <a href="#contact" class="product-link">咨询下单 →</a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-cover"><img src="https://picsum.photos/seed/prod5/500/500" alt="服饰鞋包产品占位图" loading="lazy" /></div>
+            <div class="product-body">
+              <span class="product-cat">服饰鞋包</span>
+              <h3>【产品名待补充】</h3>
+              <p class="product-desc">一句话卖点描述待补充。</p>
+              <div class="product-foot">
+                <span class="product-price"><span class="gold">价格待补充</span></span>
+                <a href="#contact" class="product-link">咨询下单 →</a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-cover"><img src="https://picsum.photos/seed/prod6/500/500" alt="农特优品占位图" loading="lazy" /></div>
+            <div class="product-body">
+              <span class="product-cat">农特优品</span>
+              <h3>【产品名待补充】</h3>
+              <p class="product-desc">一句话卖点描述待补充。</p>
+              <div class="product-foot">
+                <span class="product-price"><span class="gold">价格待补充</span></span>
+                <a href="#contact" class="product-link">咨询下单 →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="case-more reveal">
+          <a href="#contact" class="btn btn-outline-dark">查看更多产品</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 培训学院 Training ===================== -->
+    <section class="section training" id="training" aria-labelledby="training-title">
+      <div class="container training-grid">
+        <div class="training-left reveal">
+          <p class="eyebrow gold">TRAINING ACADEMY</p>
+          <h2 class="section-title" id="training-title">培训学院</h2>
+          <ul class="training-highlights">
+            <li><strong>中国导师面授</strong> — 一线实战经验直接传授</li>
+            <li><strong>理论 + 实操</strong> — 边学边拍，结业即可上手</li>
+            <li><strong>终身复训</strong> — 课程更新免费回炉</li>
+            <li><strong>推荐工作</strong> — 优秀学员对接合作企业</li>
+          </ul>
+          <p class="training-form">课程形式：<strong>7 天线下实战营</strong>，地点：缅甸曼德勒</p>
+        </div>
+
+        <div class="training-card reveal">
+          <p class="course-tag">热门课程</p>
+          <h3 class="course-name">《新媒体拍摄剪辑实战营》</h3>
+          <p class="course-for">适合人群：创业者、企业市场人员、内容创作者、转行新人</p>
+          <p class="course-learn-title">你将学到：</p>
+          <ul class="course-learn">
+            <li>手机/相机拍摄技巧与运镜</li>
+            <li>剪映 / 专业剪辑流程</li>
+            <li>账号定位与人设打造</li>
+            <li>起号逻辑与涨粉方法论</li>
+          </ul>
+          <p class="course-price"><span class="gold">学费待补充</span></p>
+          <a href="#contact" class="btn btn-gold btn-block">立即咨询报名</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 新闻动态 News ===================== -->
+    <section class="section news" id="news" aria-labelledby="news-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">NEWS & INSIGHTS</p>
+          <h2 class="section-title" id="news-title">新闻动态</h2>
+        </div>
+
+        <div class="news-grid reveal">
+          <article class="news-card">
+            <div class="news-cover"><img src="https://picsum.photos/seed/news1/600/400" alt="公司动态封面" loading="lazy" /></div>
+            <div class="news-body">
+              <p class="news-date">2026-09-20 · 公司动态</p>
+              <h3>Mr.Video 曼德勒新拍摄基地投入使用</h3>
+              <p class="news-summary">占地 200㎡ 的专业影棚正式启用，可承接企业宣传片与直播电商多场景拍摄。【占位内容】</p>
+            </div>
+          </article>
+          <article class="news-card">
+            <div class="news-cover"><img src="https://picsum.photos/seed/news2/600/400" alt="行业干货封面" loading="lazy" /></div>
+            <div class="news-body">
+              <p class="news-date">2026-09-08 · 行业干货</p>
+              <h3>缅甸 TikTok 电商 2026 三大趋势</h3>
+              <p class="news-summary">从兴趣电商到本地生活，我们拆解了缅甸市场最新的流量红利与运营要点。【占位内容】</p>
+            </div>
+          </article>
+          <article class="news-card">
+            <div class="news-cover"><img src="https://picsum.photos/seed/news3/600/400" alt="平台资讯封面" loading="lazy" /></div>
+            <div class="news-body">
+              <p class="news-date">2026-08-25 · 平台资讯</p>
+              <h3>Facebook 新算法对代运营意味着什么</h3>
+              <p class="news-summary">最新算法调整下，内容节奏与投流策略应如何应对？本文给出实操建议。【占位内容】</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 联系我们 Contact ===================== -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-info reveal">
+          <p class="eyebrow gold">CONTACT US</p>
+          <h2 class="section-title light" id="contact-title">联系我们</h2>
+          <ul class="contact-list">
+            <li>
+              <span class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+              <span>地址：缅甸曼德勒【详细街道地址待补充】<br /><span class="en">Mandalay, Myanmar</span></span>
+            </li>
+            <li>
+              <span class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+              <a href="tel:+95">电话：【+95 电话待补充】</a>
+            </li>
+            <li>
+              <span class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+              <a href="mailto:">邮箱：【邮箱待补充】</a>
+            </li>
+            <li>
+              <span class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></span>
+              <span>WhatsApp / Telegram / 微信：【账号待补充】</span>
+            </li>
+          </ul>
+          <div class="contact-social">
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+            <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8a4.9 4.9 0 0 1-3-1.1V12a3.2 3.2 0 1 1-3.2-3.2c.27 0 .53.04.78.12v2.4a1.8 1.8 0 1 0 1.27 1.72V3.3a4.9 4.9 0 0 0 4.35 4.7v-2.2z"/></svg></a>
+            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.77-1.77C19.3 5.1 12 5.1 12 5.1s-7.3 0-8.83.43A2.5 2.5 0 0 0 1.4 7.3 26 26 0 0 0 1 12a26 26 0 0 0 .4 4.7 2.5 2.5 0 0 0 1.77 1.77C4.7 18.9 12 18.9 12 18.9s7.3 0 8.83-.43a2.5 2.5 0 0 0 1.77-1.77A26 26 0 0 0 23 12zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">姓名 *</label>
+            <input type="text" id="name" name="name" placeholder="请输入您的姓名" required />
+          </div>
+          <div class="field">
+            <label for="phone">电话 *</label>
+            <input type="tel" id="phone" name="phone" placeholder="请输入联系电话（含区号）" required />
+          </div>
+          <div class="field">
+            <label for="need">需求类型</label>
+            <select id="need" name="need">
+              <option value="企业宣传">企业宣传</option>
+              <option value="社媒代运营">社媒代运营</option>
+              <option value="培训报名">培训报名</option>
+              <option value="短视频电商">短视频电商</option>
+              <option value="网红孵化">网红孵化</option>
+              <option value="其他">其他</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">留言内容</label>
+            <textarea id="message" name="message" rows="4" placeholder="简单描述您的需求"></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold btn-block">提交咨询</button>
+          <p class="form-hint" id="formHint" role="alert"></p>
+          <!-- TODO: 接入表单接收接口（后端 / 第三方表单服务） -->
+          <!-- 示例：fetch('https://your-api.example.com/lead', { method:'POST', body: JSON.stringify(data) }) -->
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== 页脚 Footer ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="#top" class="brand">
+          <img src="images/logo-horizontal.png" alt="Mr.Video 视频先生" class="brand-logo" onerror="this.onerror=null;this.src='images/logo-horizontal.jpg'" />
+        </a>
+        <p class="footer-about">缅甸新媒体一站式服务专家，只做有价值的流量。</p>
+        <div class="contact-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8a4.9 4.9 0 0 1-3-1.1V12a3.2 3.2 0 1 1-3.2-3.2c.27 0 .53.04.78.12v2.4a1.8 1.8 0 1 0 1.27 1.72V3.3a4.9 4.9 0 0 0 4.35 4.7v-2.2z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.77-1.77C19.3 5.1 12 5.1 12 5.1s-7.3 0-8.83.43A2.5 2.5 0 0 0 1.4 7.3 26 26 0 0 0 1 12a26 26 0 0 0 .4 4.7 2.5 2.5 0 0 0 1.77 1.77C4.7 18.9 12 18.9 12 18.9s7.3 0 8.83-.43a2.5 2.5 0 0 0 1.77-1.77A26 26 0 0 0 23 12zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">快捷导航</p>
+        <ul class="footer-nav">
+          <li><a href="#about">关于我们</a></li>
+          <li><a href="#services">核心业务</a></li>
+          <li><a href="#cases">精品案例</a></li>
+          <li><a href="#products">电商产品</a></li>
+          <li><a href="#training">培训学院</a></li>
+          <li><a href="#news">新闻动态</a></li>
+          <li><a href="#contact">联系我们</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">联系方式</p>
+        <ul class="footer-contact">
+          <li>缅甸曼德勒【详细地址待补充】</li>
+          <li>电话：【+95 电话待补充】</li>
+          <li>邮箱：【邮箱待补充】</li>
+          <li>WhatsApp / 微信：【账号待补充】</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Mr.Video. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== 手机端悬浮咨询栏 ===================== -->
+  <div class="mobile-bar" id="mobileBar">
+    <a href="tel:+95" class="mb-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      <span>电话</span>
+    </a>
+    <a href="#" class="mb-item mb-wa">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+      <span>WhatsApp</span>
+    </a>
+    <a href="#contact" class="mb-item mb-msg">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+      <span>留言</span>
+    </a>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Cloudflare Pages 配置
+# 用法：安装 wrangler 后执行 `wrangler pages deploy .`
+# 注：当前沙箱无法安装 wrangler（npm 被限），可本地安装后使用本配置。
+
+name = "mrvideo"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "."
