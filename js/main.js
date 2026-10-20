@@ -18,15 +18,20 @@
 
   /* ---------- 1) 导航毛玻璃 + 滚动高亮 ---------- */
   const header = document.querySelector(".site-header");
+  const hasHero = !!document.querySelector(".hero");
   const navLinks = Array.from(document.querySelectorAll(".main-nav a"));
   const sections = navLinks
     .map((a) => document.querySelector(a.getAttribute("href")))
     .filter(Boolean);
 
   function onScroll() {
-    // 毛玻璃
-    if (window.scrollY > 40) header.classList.add("scrolled");
-    else header.classList.remove("scrolled");
+    // 毛玻璃（子页面无 Hero 时始终保持实色头部）
+    if (hasHero) {
+      if (window.scrollY > 40) header.classList.add("scrolled");
+      else header.classList.remove("scrolled");
+    } else {
+      header.classList.add("scrolled");
+    }
 
     // 当前板块高亮
     const offset = 120;
@@ -95,6 +100,7 @@
   const slides = Array.from(document.querySelectorAll(".hero-slide"));
   const dotsWrap = document.getElementById("heroDots");
   const heroSection = document.querySelector(".hero");
+  const heroImages = Array.from(document.querySelectorAll(".hero-image"));
   let current = 0;
   let timer = null;
   const INTERVAL = 6000;
@@ -113,9 +119,11 @@
     function goTo(i) {
       slides[current].classList.remove("is-active");
       dots[current].classList.remove("active");
+      if (heroImages[current]) heroImages[current].classList.remove("is-active");
       current = (i + slides.length) % slides.length;
       slides[current].classList.add("is-active");
       dots[current].classList.add("active");
+      if (heroImages[current]) heroImages[current].classList.add("is-active");
     }
     function next() { goTo(current + 1); }
     function start() { if (!prefersReduced) timer = setInterval(next, INTERVAL); }
@@ -127,6 +135,36 @@
     }
     start();
   }
+
+  /* ---------- 4b) 产品封面 3 图轮播 ---------- */
+  const pacarousels = Array.from(document.querySelectorAll(".pcarousel"));
+  pacarousels.forEach((pc) => {
+    const imgs = Array.from(pc.querySelectorAll(".pimg"));
+    const dotsWrap = pc.querySelector(".pdots");
+    if (imgs.length < 2 || !dotsWrap) return;
+    imgs.forEach((_, i) => {
+      const d = document.createElement("button");
+      d.setAttribute("aria-label", "查看第 " + (i + 1) + " 张");
+      if (i === 0) d.classList.add("active");
+      d.addEventListener("click", () => goP(i));
+      dotsWrap.appendChild(d);
+    });
+    const dots = Array.from(dotsWrap.children);
+    let cur = 0, pt = null;
+    function goP(i) {
+      imgs[cur].classList.remove("is-active");
+      dots[cur].classList.remove("active");
+      cur = (i + imgs.length) % imgs.length;
+      imgs[cur].classList.add("is-active");
+      dots[cur].classList.add("active");
+    }
+    function nextP() { goP(cur + 1); }
+    function startP() { if (!prefersReduced) pt = setInterval(nextP, 3500); }
+    function stopP() { if (pt) { clearInterval(pt); pt = null; } }
+    pc.addEventListener("mouseenter", stopP);
+    pc.addEventListener("mouseleave", startP);
+    startP();
+  });
 
   /* ---------- 5) 滚动淡入 ---------- */
   const revealEls = document.querySelectorAll(".reveal");

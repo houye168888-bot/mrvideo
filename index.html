@@ -48,7 +48,7 @@
           <li><a href="#services">核心业务</a></li>
           <li><a href="#cases">精品案例</a></li>
           <li><a href="#products">电商产品</a></li>
-          <li><a href="#training">培训学院</a></li>
+          <li><a href="#training">Mr.Video 商学院</a></li>
           <li><a href="#news">新闻动态</a></li>
           <li><a href="#contact">联系我们</a></li>
         </ul>
@@ -71,7 +71,7 @@
       <a href="#services">核心业务</a>
       <a href="#cases">精品案例</a>
       <a href="#products">电商产品</a>
-      <a href="#training">培训学院</a>
+      <a href="#training">Mr.Video 商学院</a>
       <a href="#news">新闻动态</a>
       <a href="#contact">联系我们</a>
       <a href="#contact" class="btn btn-cta drawer-cta">免费咨询 / Free Consultation</a>
@@ -83,12 +83,11 @@
 
     <!-- ===================== 首屏 Banner / Hero ===================== -->
     <section class="hero" id="home" aria-label="首屏">
-      <!-- 待替换：视频背景优先，海报图兜底。当前用深色渐变 + 占位海报图 -->
+      <!-- 首页背景轮播图（深色拍摄场景），与文字 slide 同步切换 -->
       <div class="hero-bg">
-        <video class="hero-video" autoplay muted loop playsinline poster="images/hero-banner.svg">
-          <!-- TODO: 接入实拍视频 <source src="images/hero.mp4" type="video/mp4"> -->
-        </video>
-        <img class="hero-poster" src="images/hero-banner.svg" alt="Mr.Video 拍摄现场占位图" loading="eager" />
+        <div class="hero-image is-active" style="background-image:url('images/hero-1.svg')"></div>
+        <div class="hero-image" style="background-image:url('images/hero-2.svg')"></div>
+        <div class="hero-image" style="background-image:url('images/hero-3.svg')"></div>
         <div class="hero-overlay"></div>
       </div>
 
@@ -213,7 +212,7 @@
             <h3 class="service-name">社交媒体管家</h3>
             <p class="service-en">Social Media Management</p>
             <p class="service-desc">Facebook、TikTok、YouTube 等主流平台账号代运营，内容策划、短视频更新、粉丝增长与数据复盘全托管。</p>
-            <a href="#contact" class="service-link">咨询方案 →</a>
+            <a href="social-media.html" class="service-link">查看套餐与流程 →</a>
           </article>
 
           <!-- 卡片 3 -->
@@ -250,27 +249,6 @@
           </article>
         </div>
 
-        <!-- 服务套餐入口（占位） -->
-        <div class="plan-row reveal">
-          <p class="plan-row-title">服务套餐 <span class="en">/ Service Plans</span></p>
-          <div class="plan-cards">
-            <div class="plan-card">
-              <p class="plan-name">基础代运营</p>
-              <p class="plan-price"><span class="gold">【套餐详情待补充】</span></p>
-              <p class="plan-note">适合刚起步的本地中小企业</p>
-            </div>
-            <div class="plan-card">
-              <p class="plan-name">增长全案</p>
-              <p class="plan-price"><span class="gold">【套餐详情待补充】</span></p>
-              <p class="plan-note">策划+拍摄+投放一体化</p>
-            </div>
-            <div class="plan-card">
-              <p class="plan-name">企业定制</p>
-              <p class="plan-price"><span class="gold">【套餐详情待补充】</span></p>
-              <p class="plan-note">按业务目标定制方案</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -341,18 +319,6 @@
           </article>
         </div>
 
-        <!-- 一站式服务流程 -->
-        <div class="process reveal">
-          <p class="process-title">一站式服务流程 <span class="en">/ Service Process</span></p>
-          <ol class="timeline">
-            <li><span class="step-no">01</span><span class="step-name">需求诊断</span></li>
-            <li><span class="step-no">02</span><span class="step-name">方案策划</span></li>
-            <li><span class="step-no">03</span><span class="step-name">拍摄制作</span></li>
-            <li><span class="step-no">04</span><span class="step-name">账号运营</span></li>
-            <li><span class="step-no">05</span><span class="step-name">全域投放</span></li>
-            <li><span class="step-no">06</span><span class="step-name">数据复盘</span></li>
-          </ol>
-        </div>
       </div>
     </section>
 
@@ -434,73 +400,100 @@
 
         <div class="product-grid reveal">
           <article class="product-card">
-            <div class="product-cover"><img src="images/product-placeholder.svg" alt="美妆护肤产品占位图" loading="lazy" /></div>
+            <div class="product-cover">
+              <div class="pcarousel" data-pid="solar">
+                <img class="pimg is-active" src="images/solar-real-1.jpg" alt="家用太阳能光伏板 展示图1" loading="lazy" />
+                <img class="pimg" src="images/solar-real-2.jpg" alt="家用太阳能光伏板 展示图2" loading="lazy" />
+                <img class="pimg" src="images/p-solar-3b.svg" alt="家用太阳能光伏板 展示图3" loading="lazy" />
+                <div class="pdots"></div>
+              </div>
+            </div>
             <div class="product-body">
-              <span class="product-cat">美妆护肤</span>
-              <h3>【产品名待补充】</h3>
-              <p class="product-desc">一句话卖点描述待补充。</p>
+              <span class="product-cat">新能源 · 太阳能</span>
+              <h3>家用太阳能光伏板</h3>
+              <p class="product-desc">高效光电转换，稳定供电，充分利用缅甸充沛光照资源。</p>
               <div class="product-foot">
-                <span class="product-price"><span class="gold">价格待补充</span></span>
+                <span class="product-price"><span class="gold">价格面议</span></span>
                 <a href="#contact" class="product-link">咨询下单 →</a>
               </div>
             </div>
           </article>
+
           <article class="product-card">
-            <div class="product-cover"><img src="images/product-placeholder.svg" alt="食品饮料产品占位图" loading="lazy" /></div>
+            <div class="product-cover">
+              <div class="pcarousel" data-pid="speaker">
+                <img class="pimg is-active" src="images/p-bluetooth-speaker-1.svg" alt="便携蓝牙小音响 展示图1" loading="lazy" />
+                <img class="pimg" src="images/p-bluetooth-speaker-2.svg" alt="便携蓝牙小音响 展示图2" loading="lazy" />
+                <img class="pimg" src="images/p-bluetooth-speaker-3.svg" alt="便携蓝牙小音响 展示图3" loading="lazy" />
+                <div class="pdots"></div>
+              </div>
+            </div>
             <div class="product-body">
-              <span class="product-cat">食品饮料</span>
-              <h3>【产品名待补充】</h3>
-              <p class="product-desc">一句话卖点描述待补充。</p>
+              <span class="product-cat">数码影音</span>
+              <h3>便携蓝牙小音响</h3>
+              <p class="product-desc">重低音立体声，超长续航，户外随身好声音。</p>
               <div class="product-foot">
-                <span class="product-price"><span class="gold">价格待补充</span></span>
+                <span class="product-price"><span class="gold">价格面议</span></span>
                 <a href="#contact" class="product-link">咨询下单 →</a>
               </div>
             </div>
           </article>
+
           <article class="product-card">
-            <div class="product-cover"><img src="images/product-placeholder.svg" alt="家居生活产品占位图" loading="lazy" /></div>
+            <div class="product-cover">
+              <div class="pcarousel" data-pid="film">
+                <img class="pimg is-active" src="images/p-phone-film-1.svg" alt="高清钢化手机膜 展示图1" loading="lazy" />
+                <img class="pimg" src="images/p-phone-film-2.svg" alt="高清钢化手机膜 展示图2" loading="lazy" />
+                <img class="pimg" src="images/p-phone-film-3.svg" alt="高清钢化手机膜 展示图3" loading="lazy" />
+                <div class="pdots"></div>
+              </div>
+            </div>
             <div class="product-body">
-              <span class="product-cat">家居生活</span>
-              <h3>【产品名待补充】</h3>
-              <p class="product-desc">一句话卖点描述待补充。</p>
+              <span class="product-cat">手机配件</span>
+              <h3>高清钢化手机膜</h3>
+              <p class="product-desc">9H 硬度防刮耐磨，防指纹，贴合无白边。</p>
               <div class="product-foot">
-                <span class="product-price"><span class="gold">价格待补充</span></span>
+                <span class="product-price"><span class="gold">价格面议</span></span>
                 <a href="#contact" class="product-link">咨询下单 →</a>
               </div>
             </div>
           </article>
+
           <article class="product-card">
-            <div class="product-cover"><img src="images/product-placeholder.svg" alt="数码电子产品占位图" loading="lazy" /></div>
+            <div class="product-cover">
+              <div class="pcarousel" data-pid="stand">
+                <img class="pimg is-active" src="images/p-phone-stand-1.svg" alt="多角度折叠手机支架 展示图1" loading="lazy" />
+                <img class="pimg" src="images/p-phone-stand-2.svg" alt="多角度折叠手机支架 展示图2" loading="lazy" />
+                <img class="pimg" src="images/p-phone-stand-3.svg" alt="多角度折叠手机支架 展示图3" loading="lazy" />
+                <div class="pdots"></div>
+              </div>
+            </div>
             <div class="product-body">
-              <span class="product-cat">数码电子</span>
-              <h3>【产品名待补充】</h3>
-              <p class="product-desc">一句话卖点描述待补充。</p>
+              <span class="product-cat">手机配件</span>
+              <h3>多角度折叠手机支架</h3>
+              <p class="product-desc">铝合金机身，可调节角度，便携稳固不晃动。</p>
               <div class="product-foot">
-                <span class="product-price"><span class="gold">价格待补充</span></span>
+                <span class="product-price"><span class="gold">价格面议</span></span>
                 <a href="#contact" class="product-link">咨询下单 →</a>
               </div>
             </div>
           </article>
+
           <article class="product-card">
-            <div class="product-cover"><img src="images/product-placeholder.svg" alt="服饰鞋包产品占位图" loading="lazy" /></div>
-            <div class="product-body">
-              <span class="product-cat">服饰鞋包</span>
-              <h3>【产品名待补充】</h3>
-              <p class="product-desc">一句话卖点描述待补充。</p>
-              <div class="product-foot">
-                <span class="product-price"><span class="gold">价格待补充</span></span>
-                <a href="#contact" class="product-link">咨询下单 →</a>
+            <div class="product-cover">
+              <div class="pcarousel" data-pid="fan">
+                <img class="pimg is-active" src="images/p-mini-fan-1.svg" alt="迷你制冷小风扇 展示图1" loading="lazy" />
+                <img class="pimg" src="images/p-mini-fan-2.svg" alt="迷你制冷小风扇 展示图2" loading="lazy" />
+                <img class="pimg" src="images/p-mini-fan-3.svg" alt="迷你制冷小风扇 展示图3" loading="lazy" />
+                <div class="pdots"></div>
               </div>
             </div>
-          </article>
-          <article class="product-card">
-            <div class="product-cover"><img src="images/product-placeholder.svg" alt="农特优品占位图" loading="lazy" /></div>
             <div class="product-body">
-              <span class="product-cat">农特优品</span>
-              <h3>【产品名待补充】</h3>
-              <p class="product-desc">一句话卖点描述待补充。</p>
+              <span class="product-cat">生活电器</span>
+              <h3>迷你制冷小风扇</h3>
+              <p class="product-desc">三档风力，USB 充电，随身降温清爽一夏。</p>
               <div class="product-foot">
-                <span class="product-price"><span class="gold">价格待补充</span></span>
+                <span class="product-price"><span class="gold">价格面议</span></span>
                 <a href="#contact" class="product-link">咨询下单 →</a>
               </div>
             </div>
@@ -518,7 +511,7 @@
       <div class="container training-grid">
         <div class="training-left reveal">
           <p class="eyebrow gold">TRAINING ACADEMY</p>
-          <h2 class="section-title" id="training-title">培训学院</h2>
+          <h2 class="section-title" id="training-title">Mr.Video 商学院</h2>
           <ul class="training-highlights">
             <li><strong>中国导师面授</strong> — 一线实战经验直接传授</li>
             <li><strong>理论 + 实操</strong> — 边学边拍，结业即可上手</li>
@@ -530,7 +523,7 @@
 
         <div class="training-card reveal">
           <p class="course-tag">热门课程</p>
-          <h3 class="course-name">《新媒体拍摄剪辑实战营》</h3>
+          <h3 class="course-name">《0基础新媒体基础营》</h3>
           <p class="course-for">适合人群：创业者、企业市场人员、内容创作者、转行新人</p>
           <p class="course-learn-title">你将学到：</p>
           <ul class="course-learn">
@@ -539,7 +532,7 @@
             <li>账号定位与人设打造</li>
             <li>起号逻辑与涨粉方法论</li>
           </ul>
-          <p class="course-price"><span class="gold">学费待补充</span></p>
+          <p class="course-price"><span class="gold">学费：100 万缅币</span></p>
           <a href="#contact" class="btn btn-gold btn-block">立即咨询报名</a>
         </div>
       </div>
@@ -591,24 +584,24 @@
           <ul class="contact-list">
             <li>
               <span class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
-              <span>地址：缅甸曼德勒【详细街道地址待补充】<br /><span class="en">Mandalay, Myanmar</span></span>
+              <span>地址：缅甸曼德勒 77st / 32-33<br /><span class="en">77st/32-33, Mandalay, Myanmar</span></span>
             </li>
             <li>
               <span class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
-              <a href="tel:+95">电话：【+95 电话待补充】</a>
+              <span>电话：<a href="tel:09965909999">09965909999</a> / <a href="tel:09973909999">09973909999</a></span>
             </li>
             <li>
               <span class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
-              <a href="mailto:">邮箱：【邮箱待补充】</a>
+              <a href="mailto:xl17607314666@gmai.com">xl17607314666@gmai.com</a>
             </li>
             <li>
               <span class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></span>
-              <span>WhatsApp / Telegram / 微信：【账号待补充】</span>
+              <span>WeChat：09973909999 ｜ Telegram：<a href="https://t.me/09973909999">09973909999</a></span>
             </li>
           </ul>
           <div class="contact-social">
             <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
-            <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8a4.9 4.9 0 0 1-3-1.1V12a3.2 3.2 0 1 1-3.2-3.2c.27 0 .53.04.78.12v2.4a1.8 1.8 0 1 0 1.27 1.72V3.3a4.9 4.9 0 0 0 4.35 4.7v-2.2z"/></svg></a>
+            <a href="https://www.tiktok.com/@mrvideo168?_r=1&amp;_t=ZS-9AhlKWXEBBU" aria-label="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8a4.9 4.9 0 0 1-3-1.1V12a3.2 3.2 0 1 1-3.2-3.2c.27 0 .53.04.78.12v2.4a1.8 1.8 0 1 0 1.27 1.72V3.3a4.9 4.9 0 0 0 4.35 4.7v-2.2z"/></svg></a>
             <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.77-1.77C19.3 5.1 12 5.1 12 5.1s-7.3 0-8.83.43A2.5 2.5 0 0 0 1.4 7.3 26 26 0 0 0 1 12a26 26 0 0 0 .4 4.7 2.5 2.5 0 0 0 1.77 1.77C4.7 18.9 12 18.9 12 18.9s7.3 0 8.83-.43a2.5 2.5 0 0 0 1.77-1.77A26 26 0 0 0 23 12zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
           </div>
         </div>
@@ -658,7 +651,7 @@
         <p class="footer-about">缅甸新媒体一站式服务专家，只做有价值的流量。</p>
         <div class="contact-social">
           <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
-          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8a4.9 4.9 0 0 1-3-1.1V12a3.2 3.2 0 1 1-3.2-3.2c.27 0 .53.04.78.12v2.4a1.8 1.8 0 1 0 1.27 1.72V3.3a4.9 4.9 0 0 0 4.35 4.7v-2.2z"/></svg></a>
+          <a href="https://www.tiktok.com/@mrvideo168?_r=1&amp;_t=ZS-9AhlKWXEBBU" aria-label="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8a4.9 4.9 0 0 1-3-1.1V12a3.2 3.2 0 1 1-3.2-3.2c.27 0 .53.04.78.12v2.4a1.8 1.8 0 1 0 1.27 1.72V3.3a4.9 4.9 0 0 0 4.35 4.7v-2.2z"/></svg></a>
           <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.77-1.77C19.3 5.1 12 5.1 12 5.1s-7.3 0-8.83.43A2.5 2.5 0 0 0 1.4 7.3 26 26 0 0 0 1 12a26 26 0 0 0 .4 4.7 2.5 2.5 0 0 0 1.77 1.77C4.7 18.9 12 18.9 12 18.9s7.3 0 8.83-.43a2.5 2.5 0 0 0 1.77-1.77A26 26 0 0 0 23 12zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
         </div>
       </div>
@@ -669,7 +662,7 @@
           <li><a href="#services">核心业务</a></li>
           <li><a href="#cases">精品案例</a></li>
           <li><a href="#products">电商产品</a></li>
-          <li><a href="#training">培训学院</a></li>
+          <li><a href="#training">Mr.Video 商学院</a></li>
           <li><a href="#news">新闻动态</a></li>
           <li><a href="#contact">联系我们</a></li>
         </ul>
@@ -677,10 +670,10 @@
       <div class="footer-col">
         <p class="footer-title">联系方式</p>
         <ul class="footer-contact">
-          <li>缅甸曼德勒【详细地址待补充】</li>
-          <li>电话：【+95 电话待补充】</li>
-          <li>邮箱：【邮箱待补充】</li>
-          <li>WhatsApp / 微信：【账号待补充】</li>
+          <li>缅甸曼德勒 77st / 32-33</li>
+          <li>电话：09965909999 / 09973909999</li>
+          <li>邮箱：xl17607314666@gmai.com</li>
+          <li>WeChat / Telegram：09973909999</li>
         </ul>
       </div>
     </div>
@@ -691,13 +684,13 @@
 
   <!-- ===================== 手机端悬浮咨询栏 ===================== -->
   <div class="mobile-bar" id="mobileBar">
-    <a href="tel:+95" class="mb-item">
+    <a href="tel:09965909999" class="mb-item">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
       <span>电话</span>
     </a>
-    <a href="#" class="mb-item mb-wa">
+    <a href="https://t.me/09973909999" class="mb-item mb-wa" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-      <span>WhatsApp</span>
+      <span>Telegram</span>
     </a>
     <a href="#contact" class="mb-item mb-msg">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>

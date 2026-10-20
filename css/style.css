@@ -119,8 +119,8 @@ a { color: inherit; text-decoration: none; }
 }
 .brand-text { font-family: var(--en-font); font-weight: 800; font-size: 22px; letter-spacing: .5px; }
 .brand-logo {
-  height: 40px; width: auto; display: block;
-  border-radius: 8px; padding: 2px 6px;
+  height: 56px; width: auto; display: block;
+  border-radius: 8px; padding: 2px 8px;
   object-fit: contain;
   filter: drop-shadow(0 1px 2px rgba(0,0,0,0.35));
 }
@@ -191,6 +191,30 @@ a { color: inherit; text-decoration: none; }
 .scroll-arrow { position: absolute; bottom: 28px; right: 40px; z-index: 3; color: rgba(255,255,255,0.8); animation: bounce 2s infinite; }
 @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
 
+/* Hero 背景图轮播 */
+.hero-image { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease; z-index: 0; }
+.hero-image.is-active { opacity: 1; }
+.hero-overlay { z-index: 1; }
+
+/* 产品封面 3 图轮播 */
+.product-cover { position: relative; }
+.pcarousel { position: absolute; inset: 0; }
+.pcarousel .pimg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .6s ease; }
+.pcarousel .pimg.is-active { opacity: 1; }
+.pcarousel .pdots { position: absolute; bottom: 10px; left: 0; right: 0; display: flex; justify-content: center; gap: 6px; z-index: 3; }
+.pcarousel .pdots button { width: 8px; height: 8px; border: 0; border-radius: 50%; background: rgba(255,255,255,0.65); cursor: pointer; padding: 0; transition: width .2s, background .2s; }
+.pcarousel .pdots button.active { background: var(--gold); width: 18px; border-radius: 4px; }
+
+/* ---------- 子页面（独立页）通用 ---------- */
+.page-hero { background: linear-gradient(120deg, #0A2540 0%, #103058 100%); color: #fff; padding: 140px 0 76px; }
+.page-hero .eyebrow { color: var(--gold); }
+.page-hero h1 { font-size: 46px; font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: 1px; }
+.page-hero p { color: rgba(255,255,255,0.82); font-size: 18px; margin-top: 16px; max-width: 720px; }
+.page-hero .hero-actions { margin-top: 30px; }
+.page-cta { background: var(--navy); color: #fff; text-align: center; padding: 64px 0; }
+.page-cta h2 { color: #fff; font-size: 30px; margin-bottom: 18px; }
+.page-cta .btn-gold { color: #1a1304; }
+
 /* ---------- 关于我们 ---------- */
 .about-head { margin-bottom: 36px; text-align: left; }
 .about-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: start; }
@@ -206,7 +230,7 @@ a { color: inherit; text-decoration: none; }
   box-shadow: var(--shadow);
 }
 .positioning-label { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; color: var(--blue); text-transform: uppercase; }
-.positioning-cn { font-size: 26px; font-weight: 700; color: var(--navy); margin-top: 10px; line-height: 1.35; }
+.positioning-cn { font-size: 30px; font-weight: 700; color: var(--navy); margin-top: 10px; line-height: 1.35; }
 .positioning-en { font-size: 14px; color: var(--muted); margin-top: 6px; letter-spacing: .5px; font-family: var(--en-font); }
 
 /* 企业理念 — 金色渐变卡片 + 左侧金色竖条 */
@@ -214,7 +238,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: 0; padding: 20px 24px; border-left: 4px solid var(--gold);
   background: linear-gradient(135deg, rgba(201,162,75,0.22) 0%, rgba(201,162,75,0.06) 100%);
   border-radius: 0 var(--radius) var(--radius) 0;
-  font-size: 26px; font-weight: 700; color: var(--navy); line-height: 1.5;
+  font-size: 30px; font-weight: 700; color: var(--navy); line-height: 1.5;
 }
 .quote .en { display: block; font-size: 15px; font-weight: 500; color: var(--gold); margin-top: 6px; letter-spacing: 1px; }
 .quote-label { display: block; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; color: var(--blue); text-transform: uppercase; margin-bottom: 8px; }
@@ -252,6 +276,9 @@ a { color: inherit; text-decoration: none; }
 .plan-name { font-size: 18px; font-weight: 700; }
 .plan-price { font-size: 18px; margin: 12px 0; }
 .plan-note { font-size: 13px; color: rgba(255,255,255,0.7); }
+.plan-feats { list-style: none; text-align: left; margin: 16px 0 22px; }
+.plan-feats li { font-size: 14px; color: rgba(255,255,255,0.82); padding: 8px 0 8px 24px; position: relative; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.plan-feats li::before { content: "✓"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
 
 /* ---------- 企业愿景 ---------- */
 .vision {
@@ -442,7 +469,7 @@ a { color: inherit; text-decoration: none; }
   .main-nav, .site-header .btn-cta { display: none; }
   .hamburger { display: flex; }
   .nav-inner { height: 60px; }
-  .brand-logo { height: 34px; padding: 3px 6px; }
+  .brand-logo { height: 46px; padding: 3px 8px; }
 
   /* Hero */
   .hero { min-height: 92vh; }
@@ -456,8 +483,8 @@ a { color: inherit; text-decoration: none; }
 
   /* 关于我们 */
   .about-grid { grid-template-columns: 1fr; gap: 28px; }
-  .positioning-cn { font-size: 21px; }
-  .quote { font-size: 21px; }
+  .positioning-cn { font-size: 24px; }
+  .quote { font-size: 24px; }
 
   /* 核心业务 — 单列堆叠（可横滑） */
   .services-grid {
