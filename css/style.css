@@ -249,29 +249,6 @@ section[id] { scroll-margin-top: 116px; }
 .quote .en { display: block; font-size: 15px; font-weight: 500; color: var(--gold); margin-top: 6px; letter-spacing: 1px; }
 .quote-label { display: block; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; color: var(--blue); text-transform: uppercase; margin-bottom: 8px; }
 
-/* 核心成员 — 深色卡片（与定位/理念卡片同族） */
-.core-team {
-  padding: 22px 24px;
-  border-radius: var(--radius);
-  background: linear-gradient(135deg, var(--navy) 0%, #16375C 100%);
-  box-shadow: var(--shadow);
-  color: var(--white);
-}
-.core-team-label { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; color: var(--gold); text-transform: uppercase; }
-.core-team-cn { font-size: 22px; font-weight: 700; color: var(--white); margin-top: 10px; line-height: 1.35; }
-.core-team-desc { font-size: 15px; color: rgba(255,255,255,0.82); line-height: 1.75; margin-top: 12px; }
-.core-team-points { list-style: none; margin-top: 16px; }
-.core-team-points li {
-  font-size: 14px; color: rgba(255,255,255,0.9);
-  padding: 8px 0 8px 24px; position: relative;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-.core-team-points li:last-child { border-bottom: 0; }
-.core-team-points li::before {
-  content: ""; position: absolute; left: 2px; top: 50%;
-  width: 8px; height: 8px; margin-top: -4px;
-  border-radius: 50%; background: var(--gold);
-}
 .about-media img { border-radius: var(--radius); box-shadow: var(--shadow); width: 100%; }
 
 /* ---------- 核心业务 ---------- */
@@ -535,8 +512,6 @@ section[id] { scroll-margin-top: 116px; }
   .about-grid { grid-template-columns: 1fr; gap: 28px; }
   .positioning-cn { font-size: 24px; }
   .quote { font-size: 24px; }
-  .core-team { padding: 20px; }
-  .core-team-cn { font-size: 20px; }
 
   /* 核心业务 — 单列堆叠（可横滑） */
   .services-grid {
