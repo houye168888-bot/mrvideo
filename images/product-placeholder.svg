@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid slice">
+  <!-- 待替换：电商产品图占位，后期替换为真实产品照片 -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a2f38"/>
+      <stop offset="1" stop-color="#3d4450"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" fill="url(#bg)"/>
+  <rect x="165" y="150" width="170" height="200" rx="14" fill="none" stroke="#C9A24B" stroke-width="4" opacity="0.85"/>
+  <text x="250" y="420" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#FFFFFF" opacity="0.75">产品图 · 待替换</text>
+</svg>

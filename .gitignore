@@ -8,3 +8,6 @@ Thumbs.db
 # 本地环境
 node_modules/
 *.log
+
+mrvideo-cloudflare-pages/
+mrvideo-cloudflare-pages.zip

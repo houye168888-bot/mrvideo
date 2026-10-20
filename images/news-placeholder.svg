@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+  <!-- 待替换：新闻资讯配图占位，后期替换为真实配图 -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#33404f"/>
+      <stop offset="1" stop-color="#123252"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <rect x="140" y="120" width="320" height="160" rx="10" fill="#FFFFFF" opacity="0.12"/>
+  <rect x="165" y="150" width="270" height="12" rx="6" fill="#FFFFFF" opacity="0.35"/>
+  <rect x="165" y="180" width="220" height="12" rx="6" fill="#FFFFFF" opacity="0.25"/>
+  <rect x="165" y="210" width="245" height="12" rx="6" fill="#FFFFFF" opacity="0.25"/>
+  <text x="300" y="345" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#FFFFFF" opacity="0.7">资讯配图 · 待替换</text>
+</svg>

@@ -240,4 +240,12 @@
       setTimeout(() => { hint.textContent = ""; hint.className = "form-hint"; }, 4000);
     });
   }
+
+  /* ---------- 9) 图片加载失败兜底（避免破图影响版式） ---------- */
+  // 若 picsum 等外部占位图在部分地区加载失败，降级为渐变占位，不显示破图标
+  document.querySelectorAll("img").forEach(function (img) {
+    img.addEventListener("error", function () {
+      img.classList.add("img-fallback");
+    });
+  });
 })();
