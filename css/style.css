@@ -357,7 +357,10 @@ a { color: inherit; text-decoration: none; }
 .news-summary { color: var(--text-muted); font-size: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
 /* ---------- 联系我们 ---------- */
-.contact { background: var(--navy); color: var(--white); }
+.contact {
+  background: var(--navy) !important;
+  color: var(--white) !important;
+}
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
 .contact-list { list-style: none; margin-top: 28px; }
 .contact-list li { display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.88); font-size: 15px; }
