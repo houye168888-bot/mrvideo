@@ -47,10 +47,12 @@
   onScroll();
 
   /* ---------- 2) 锚点平滑滚动（含固定头部偏移） ---------- */
+  // 偏移量取实际头部高度 + 12px 呼吸位，随 Logo 放大自动适配
+  const headerOffset = () => (header ? header.offsetHeight : 72) + 12;
   function smoothTo(target) {
     const el = typeof target === "string" ? document.querySelector(target) : target;
     if (!el) return;
-    const top = el.getBoundingClientRect().top + window.scrollY - 70;
+    const top = el.getBoundingClientRect().top + window.scrollY - headerOffset();
     window.scrollTo({ top, behavior: prefersReduced ? "auto" : "smooth" });
   }
   document.querySelectorAll('a[href^="#"]').forEach((link) => {

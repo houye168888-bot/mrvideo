@@ -93,8 +93,10 @@ a { color: inherit; text-decoration: none; }
 .btn-outline:hover { background: rgba(255,255,255,0.12); border-color: var(--white); }
 .btn-outline-dark { background: transparent; color: var(--navy); border-color: var(--navy); }
 .btn-outline-dark:hover { background: var(--navy); color: var(--white); }
-.btn-cta { border-color: var(--gold); color: var(--gold); background: transparent; min-height: 42px; padding: 0 20px; font-size: 15px; }
+.btn-cta { border-color: var(--gold); color: var(--gold); background: transparent; min-height: 42px; padding: 0 16px; font-size: 14px; white-space: nowrap; }
 .btn-cta:hover { background: var(--gold); color: #1a1304; }
+/* 中等宽度隐藏 CTA 英文副标题，为 Logo 腾出空间 */
+@media (max-width: 1399px) { .site-header .btn-cta .en { display: none; } }
 .btn-block { width: 100%; }
 
 /* ---------- 顶部导航 ---------- */
@@ -109,7 +111,10 @@ a { color: inherit; text-decoration: none; }
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 4px 20px rgba(0,0,0,0.18);
 }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 104px; }
+
+/* 固定头部偏移：锚点跳转时避免标题被遮挡 */
+section[id] { scroll-margin-top: 116px; }
 
 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--white); }
 .brand-play {
@@ -119,16 +124,17 @@ a { color: inherit; text-decoration: none; }
 }
 .brand-text { font-family: var(--en-font); font-weight: 800; font-size: 22px; letter-spacing: .5px; }
 .brand-logo {
-  height: 56px; width: auto; display: block;
-  border-radius: 8px; padding: 2px 8px;
+  height: 76px; width: auto; max-width: 300px; display: block;
+  padding: 0; border-radius: 0;
   object-fit: contain;
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.35));
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.45));
 }
 
-.main-nav ul { display: flex; gap: 30px; list-style: none; }
+.main-nav ul { display: flex; gap: 20px; list-style: none; }
 .main-nav a {
-  color: rgba(255,255,255,0.88); font-size: 15px; font-weight: 500;
+  color: rgba(255,255,255,0.88); font-size: 14px; font-weight: 500;
   padding: 6px 2px; position: relative; transition: color .2s;
+  white-space: nowrap;
 }
 .main-nav a::after {
   content: ""; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px;
@@ -159,7 +165,7 @@ a { color: inherit; text-decoration: none; }
 .drawer-overlay.show { opacity: 1; pointer-events: auto; }
 
 /* ---------- Hero ---------- */
-.hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
+.hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; padding-top: 104px; }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
 .hero-video, .hero-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .hero-poster { z-index: -1; }
@@ -206,7 +212,7 @@ a { color: inherit; text-decoration: none; }
 .pcarousel .pdots button.active { background: var(--gold); width: 18px; border-radius: 4px; }
 
 /* ---------- 子页面（独立页）通用 ---------- */
-.page-hero { background: linear-gradient(120deg, #0A2540 0%, #103058 100%); color: #fff; padding: 140px 0 76px; }
+.page-hero { background: linear-gradient(120deg, #0A2540 0%, #103058 100%); color: #fff; padding: 172px 0 76px; }
 .page-hero .eyebrow { color: var(--gold); }
 .page-hero h1 { font-size: 46px; font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: 1px; }
 .page-hero p { color: rgba(255,255,255,0.82); font-size: 18px; margin-top: 16px; max-width: 720px; }
@@ -242,10 +248,34 @@ a { color: inherit; text-decoration: none; }
 }
 .quote .en { display: block; font-size: 15px; font-weight: 500; color: var(--gold); margin-top: 6px; letter-spacing: 1px; }
 .quote-label { display: block; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; color: var(--blue); text-transform: uppercase; margin-bottom: 8px; }
+
+/* 核心成员 — 深色卡片（与定位/理念卡片同族） */
+.core-team {
+  padding: 22px 24px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--navy) 0%, #16375C 100%);
+  box-shadow: var(--shadow);
+  color: var(--white);
+}
+.core-team-label { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; color: var(--gold); text-transform: uppercase; }
+.core-team-cn { font-size: 22px; font-weight: 700; color: var(--white); margin-top: 10px; line-height: 1.35; }
+.core-team-desc { font-size: 15px; color: rgba(255,255,255,0.82); line-height: 1.75; margin-top: 12px; }
+.core-team-points { list-style: none; margin-top: 16px; }
+.core-team-points li {
+  font-size: 14px; color: rgba(255,255,255,0.9);
+  padding: 8px 0 8px 24px; position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.core-team-points li:last-child { border-bottom: 0; }
+.core-team-points li::before {
+  content: ""; position: absolute; left: 2px; top: 50%;
+  width: 8px; height: 8px; margin-top: -4px;
+  border-radius: 50%; background: var(--gold);
+}
 .about-media img { border-radius: var(--radius); box-shadow: var(--shadow); width: 100%; }
 
 /* ---------- 核心业务 ---------- */
-.services-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .service-card {
   background: var(--white); border-radius: var(--radius); padding: 30px 22px;
   box-shadow: var(--shadow); text-align: center; position: relative; overflow: hidden;
@@ -417,6 +447,8 @@ a { color: inherit; text-decoration: none; }
 /* ---------- 页脚 ---------- */
 .site-footer { background: #06192c; color: rgba(255,255,255,0.8); padding: 56px 0 0; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
+/* 页脚 Logo：略小于导航，保持视觉层级 */
+.site-footer .brand-logo { height: 60px; }
 .footer-about { margin: 16px 0 22px; font-size: 14px; color: rgba(255,255,255,0.65); }
 .footer-title { color: var(--white); font-weight: 700; font-size: 16px; margin-bottom: 16px; }
 .footer-nav, .footer-contact { list-style: none; }
@@ -439,6 +471,18 @@ a { color: inherit; text-decoration: none; }
 .reveal.in { opacity: 1; transform: translateY(0); }
 
 /* ============================================================
+   响应式 — 中屏/平板竖屏 768-1023（启用汉堡菜单）
+   ============================================================ */
+@media (max-width: 1023px) {
+  .main-nav, .site-header .btn-cta { display: none; }
+  .hamburger { display: flex; }
+  .nav-inner { height: 92px; }
+  .brand-logo { height: 66px; }
+  section[id] { scroll-margin-top: 100px; }
+  .hero { padding-top: 92px; }
+}
+
+/* ============================================================
    响应式 — 平板 768-1199
    ============================================================ */
 @media (max-width: 1199px) {
@@ -447,12 +491,20 @@ a { color: inherit; text-decoration: none; }
   .section-title { font-size: 34px; }
   .hero-title { font-size: 48px; }
   .services-grid { grid-template-columns: repeat(3, 1fr); }
-  .service-card:nth-child(4), .service-card:nth-child(5) { grid-column: span 1; }
   .vision-stats { grid-template-columns: repeat(2, 1fr); gap: 36px; }
   .case-grid { grid-template-columns: repeat(2, 1fr); }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
   .news-grid { grid-template-columns: repeat(2, 1fr); }
   .about-grid, .training-grid, .contact-grid { gap: 40px; }
+  /* 平板：Logo 适度缩放，避免挤占导航空间 */
+  .nav-inner { height: 92px; }
+  .brand-logo { height: 62px; }
+  section[id] { scroll-margin-top: 104px; }
+  .hero { padding-top: 92px; }
+  /* 平板导航压缩：隐藏英文 CTA、缩小间距与字号 */
+  .site-header .btn-cta .en { display: none; }
+  .main-nav ul { gap: 14px; }
+  .main-nav a { font-size: 13px; }
 }
 
 /* ============================================================
@@ -465,14 +517,12 @@ a { color: inherit; text-decoration: none; }
   .section-title { font-size: 28px; }
   .section-head { margin-bottom: 40px; }
 
-  /* 导航 */
-  .main-nav, .site-header .btn-cta { display: none; }
-  .hamburger { display: flex; }
-  .nav-inner { height: 60px; }
-  .brand-logo { height: 46px; padding: 3px 8px; }
+  /* 导航（移动端规则已由 max-width:1023px 断点统一处理，此处仅微调尺寸） */
+  .nav-inner { height: 92px; }
+  .brand-logo { height: 66px; }
 
   /* Hero */
-  .hero { min-height: 92vh; }
+  .hero { min-height: 92vh; padding-top: 92px; }
   .hero-title { font-size: 34px; }
   .hero-sub { font-size: 16px; }
   .hero-eyebrow { font-size: 12px; }
@@ -485,10 +535,12 @@ a { color: inherit; text-decoration: none; }
   .about-grid { grid-template-columns: 1fr; gap: 28px; }
   .positioning-cn { font-size: 24px; }
   .quote { font-size: 24px; }
+  .core-team { padding: 20px; }
+  .core-team-cn { font-size: 20px; }
 
   /* 核心业务 — 单列堆叠（可横滑） */
   .services-grid {
-    grid-template-columns: repeat(5, 80%);
+    grid-template-columns: repeat(6, 80%);
     overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px;
     -webkit-overflow-scrolling: touch; padding-bottom: 8px;
   }
@@ -525,6 +577,7 @@ a { color: inherit; text-decoration: none; }
 
   /* 页脚 */
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .site-footer .brand-logo { height: 52px; }
 
   /* 手机悬浮栏 */
   .mobile-bar {
@@ -546,7 +599,9 @@ a { color: inherit; text-decoration: none; }
 /* 极小屏 */
 @media (max-width: 380px) {
   .hero-title { font-size: 30px; }
-  .services-grid { grid-template-columns: repeat(5, 86%); }
+  .services-grid { grid-template-columns: repeat(6, 86%); }
+  .brand-logo { height: 58px; }
+  .nav-inner { height: 84px; }
 }
 
 /* ---------- 尊重 reduce-motion ---------- */
