@@ -13,7 +13,7 @@
     "缅甸新媒体一站式服务专家": "Myanmar's New Media Service Partner",
     "获取方案": "Get a Proposal",
     "了解业务": "Explore Services",
-    "中国资深团队": "Senior team from China",
+    "中缅资深团队": "Senior China-Myanmar Team",
     "一站式全链服务": "One-stop full-chain service",
     "丰富行业经验": "Extensive industry experience",
     "短视频电商增长 · 直播带货 · 投流转化": "Short-video e-commerce growth · Live-stream selling · Paid traffic conversion",
@@ -26,7 +26,7 @@
     "7 天实战营": "7-day bootcamp",
     "终身复训": "Lifetime refresher training",
     "结业推荐": "Job placement",
-    "Mr.Video 是扎根缅甸的新媒体全链路服务商，由中国资深团队操盘，业务覆盖企业宣传、社交媒体代运营、人才培训、短视频电商、广告投放和网红孵化，为企业提供从策划、拍摄、剪辑到投放和人才培养的一站式支持。秉承\"只做有价值的流量\"的企业理念，结合缅甸当地实际，用已验证过的流量打法，赋能本土企业和品牌，把流量变成真实可见的生意增长和品牌资产。": "Mr.Video is a full-service new media agency rooted in Myanmar, operated by a senior team from China. We cover corporate promotion, social media management, talent training, short-video e-commerce, ad placement and influencer incubation — providing end-to-end support from strategy, shooting and editing through to media buying and talent development. Guided by our philosophy of \"only creating traffic that brings value\", we pair proven traffic playbooks with the realities of the Myanmar market to empower local businesses and brands, turning traffic into visible business growth and lasting brand equity.",
+    "Mr.Video 是扎根缅甸的新媒体全链路服务商，由中缅资深团队操盘，业务覆盖企业宣传、社交媒体代运营、人才培训、短视频电商、广告投放和网红孵化，为企业提供从策划、拍摄、剪辑到投放和人才培养的一站式支持。秉承\"只做有价值的流量\"的企业理念，结合缅甸当地实际，用已验证过的流量打法，赋能本土企业和品牌，把流量变成真实可见的生意增长和品牌资产。": "Mr.Video is a full-service new media agency rooted in Myanmar, operated by a senior China-Myanmar team. We cover corporate promotion, social media management, talent training, short-video e-commerce, ad placement and influencer incubation — providing end-to-end support from strategy, shooting and editing through to media buying and talent development. Guided by our philosophy of \"only creating traffic that brings value\", we pair proven traffic playbooks with the realities of the Myanmar market to empower local businesses and brands, turning traffic into visible business growth and lasting brand equity.",
     "企业定位 · Positioning": "Positioning",
     "新媒体一站式服务专家": "One-stop new media service expert",
     "企业理念 · Philosophy": "Philosophy",
@@ -51,7 +51,7 @@
     "助力品牌发展": "Brands accelerated",
     "成就行业顶流": "Top creators built",
     "企业优势": "Why Choose Us",
-    "核心成员来自中国资深新媒体公司，有着多年行业经验，曾参与多个百万级账号打造，累计操盘电商 GMV 超过亿元级别。": "Core members come from established new media companies in China with years of industry experience. They have helped build multiple million-follower accounts and have driven more than RMB 100 million in cumulative e-commerce GMV.",
+    "核心成员来自中缅两地的资深新媒体团队，既有一线成熟的方法论，也有深扎缅甸本地的实战经验。多年行业经验，参与多个百万级账号打造，累计操盘电商 GMV 超过亿元级别。": "The core team is drawn from senior new media teams in both China and Myanmar, combining mature first-hand methodology with practical experience rooted in the local Myanmar market. With years of industry experience, they have helped build multiple million-follower accounts and have driven more than RMB 100 million in cumulative e-commerce GMV.",
     "深耕短视频、直播电商与社媒运营，熟悉中缅两地市场与平台规则。": "Deep expertise in short video, live-stream e-commerce and social media operations, with an intimate understanding of both the Chinese and Myanmar markets and their platform rules.",
     "策划、拍摄、剪辑、运营、投放、培训一体化，企业无需对接多个供应商。": "Strategy, shooting, editing, operations, media buying and training under one roof — no need to coordinate multiple vendors.",
     "真实数据，看得见的增长": "Real results, visible growth",
@@ -203,10 +203,10 @@
   "pages": {
     "index": {
       "title": "Mr.Video Media | One-stop new media service expert in Myanmar",
-      "description": "Mr.Video is a full-service new media agency rooted in Myanmar, operated by a senior team from China. Corporate promotion, social media management, talent training, short-video e-commerce, ad placement and influencer incubation — from strategy, shooting and editing to media buying and talent development. Only traffic that brings value.",
+      "description": "Mr.Video is a full-service new media agency rooted in Myanmar, operated by a senior China-Myanmar team. Corporate promotion, social media management, talent training, short-video e-commerce, ad placement and influencer incubation — from strategy, shooting and editing to media buying and talent development. Only traffic that brings value.",
       "keywords": "Myanmar new media agency, Mandalay social media management, TikTok agency Myanmar, influencer incubation Myanmar, new media training Myanmar, short video e-commerce Myanmar, Mr.Video",
       "og:title": "Mr.Video Media | One-stop new media service expert in Myanmar",
-      "og:description": "A full-service new media agency rooted in Myanmar, operated by a senior team from China — corporate promotion, social media management, talent training, short-video e-commerce, ad placement and influencer incubation."
+      "og:description": "A full-service new media agency rooted in Myanmar, operated by a senior China-Myanmar team — corporate promotion, social media management, talent training, short-video e-commerce, ad placement and influencer incubation."
     },
     "social": {
       "title": "Social Media Management | Mr.Video Media",
