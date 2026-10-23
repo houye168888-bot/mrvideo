@@ -9,5 +9,8 @@ Thumbs.db
 node_modules/
 *.log
 
+# 临时验证目录（截图 / headless 测量）
+.tmpbi/
+
 mrvideo-cloudflare-pages/
 mrvideo-cloudflare-pages.zip

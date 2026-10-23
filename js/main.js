@@ -16,6 +16,22 @@
 
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* ---------- 0) 语言判定（中文站 / 英文站） ---------- */
+  const isEN = (document.documentElement.getAttribute("lang") || "").toLowerCase().startsWith("en");
+  const T = isEN
+    ? {
+        switchTo: "Switch to slide ",
+        viewImg: "View image ",
+        errRequired: "Please fill in the required fields and make sure the phone number is valid (e.g. +95 9xxxxxxx).",
+        okSent: "Thank you! We will get back to you shortly.",
+      }
+    : {
+        switchTo: "切换到第 ",
+        viewImg: "查看第 ",
+        errRequired: "请填写必填项，并确保电话格式正确（如 +95 9xxxxxxx）。",
+        okSent: "提交成功！我们会尽快与您联系。",
+      };
+
   /* ---------- 1) 导航毛玻璃 + 滚动高亮 ---------- */
   const header = document.querySelector(".site-header");
   const hasHero = !!document.querySelector(".hero");
@@ -111,7 +127,7 @@
     slides.forEach((_, i) => {
       const dot = document.createElement("button");
       dot.setAttribute("role", "tab");
-      dot.setAttribute("aria-label", "切换到第 " + (i + 1) + " 张");
+      dot.setAttribute("aria-label", T.switchTo + (i + 1) + (isEN ? "" : " 张"));
       if (i === 0) dot.classList.add("active");
       dot.addEventListener("click", () => goTo(i));
       dotsWrap.appendChild(dot);
@@ -146,7 +162,7 @@
     if (imgs.length < 2 || !dotsWrap) return;
     imgs.forEach((_, i) => {
       const d = document.createElement("button");
-      d.setAttribute("aria-label", "查看第 " + (i + 1) + " 张");
+      d.setAttribute("aria-label", T.viewImg + (i + 1) + (isEN ? "" : " 张"));
       if (i === 0) d.classList.add("active");
       d.addEventListener("click", () => goP(i));
       dotsWrap.appendChild(d);
@@ -254,7 +270,7 @@
       if (!phoneOk) { phone.classList.add("invalid"); ok = false; }
 
       if (!ok) {
-        hint.textContent = "请填写必填项，并确保电话格式正确（如 +95 9xxxxxxx）。";
+        hint.textContent = T.errRequired;
         hint.className = "form-hint err";
         return;
       }
@@ -274,7 +290,7 @@
       //   body: JSON.stringify(data)
       // }).then(...)
 
-      hint.textContent = "提交成功！我们会尽快与您联系。";
+      hint.textContent = T.okSent;
       hint.className = "form-hint ok";
       form.reset();
       setTimeout(() => { hint.textContent = ""; hint.className = "form-hint"; }, 4000);
