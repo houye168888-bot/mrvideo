@@ -1,7 +1,26 @@
 # Mr.Video 官网 · Cloudflare Pages 部署指南
 
-本目录为可直接托管的静态网站：`index.html` + `css/` + `js/` + `images/`。
+本目录为可直接托管的静态网站：`index.html` + `css/` + `js/` + `images/` + `en/`（英文版）。
 以下三种方式任选其一，全部免费（Cloudflare Pages Free 额度足够）。
+
+## 站点结构
+
+| 路径 | 语言 | 说明 |
+|---|---|---|
+| `/` | 中文 | 首页 |
+| `/social-media` | 中文 | 社交媒体管家（Cloudflare clean URL，原 `.html` 会 308 跳转） |
+| `/en/` | English | 英文版首页 |
+| `/en/social-media` | English | 英文版社交媒体管家 |
+
+**英文版是构建产物，不是手写文件。** 中文 HTML 是唯一内容源，英文版由
+`build_en.py` + `i18n/en.json` 生成。修改中文内容后必须重新执行：
+
+```bash
+python build_en.py
+```
+
+构建脚本有两道防脱节保险：缺少翻译直接报错退出；英文版输出后扫描残留中文，
+命中即报错。**请勿直接编辑 `en/` 目录下的文件**，会被下次构建覆盖。
 
 ---
 
@@ -31,6 +50,9 @@
    - 构建输出目录：**`/`（根目录）**
 4. 保存并部署。之后每次 `git push` 自动触发重新部署。
 
+> Git 集成部署的是仓库里已提交的静态文件。**英文版 `en/` 需先在本地运行
+> `python build_en.py` 生成后再提交**，否则线上英文版不会更新。
+
 本地已为你初始化好 Git 仓库（`.gitignore` 已排除 `.workbuddy`），你只需：
 ```bash
 git remote add origin <你的仓库地址>
@@ -59,6 +81,7 @@ wrangler pages deploy .   # 在项目根目录执行
 - [ ] 填入 Google Analytics / Meta Pixel ID（见 `index.html` head 注释位）
 - [ ] 在 Cloudflare 开启 **始终使用 HTTPS** 与 **自动 HTTPS 重写**
 - [ ] 绑定自定义域名并等待证书生效
+- [ ] 修改中文内容后执行 `python build_en.py` 并提交 `en/` 目录
 
 ---
 

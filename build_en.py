@@ -44,6 +44,8 @@ CJK = re.compile(r"[\u3400-\u4dbf\u4e00-\u9fff\u3000-\u303f\uff00-\uffef]")
 BLOCK_NAMES = ["head-alt", "lang-switch", "lang-switch-drawer", "lang-switch-footer"]
 
 # ---------------------------------------------------------------- 页面配置
+# 说明：Cloudflare Pages 启用了 clean URLs（/social-media.html → 308 → /social-media），
+# 因此 SEO 声明与站内链接统一使用无扩展名形式，避免多一跳重定向。
 PAGES = [
     {
         "name": "index",
@@ -60,8 +62,8 @@ PAGES = [
         "name": "social",
         "src": "social-media.html",
         "out": "en/social-media.html",
-        "zh_url": "/social-media.html",
-        "en_url": "/en/social-media.html",
+        "zh_url": "/social-media",
+        "en_url": "/en/social-media",
         "site": "https://mrvideo.vip",
         "switch_label": "EN",
         "switch_aria": UI["aria_zh_to_en"],
@@ -251,6 +253,27 @@ def rewrite_paths_en(src: str) -> str:
     return src
 
 
+def normalize_links_en(src: str) -> str:
+    """英文版站内链接规范化为 Cloudflare clean URLs（无 .html 扩展名）。
+
+    Cloudflare Pages 会对 /en/social-media.html 返回 308 -> /en/social-media，
+    因此英文版链接直接使用无扩展名形式，一步到位。
+
+    注意：只作用于英文版产物（不回写中文源文件），且必须在翻译完成后调用，
+    否则会破坏 special 字典的整段字面匹配。
+    """
+    # 首页 -> 社交页
+    src = src.replace('href="social-media.html"', 'href="/en/social-media"')
+    # 社交页 -> 首页（含锚点）
+    src = src.replace('href="index.html', 'href="/en/index.html')
+    # 语言切换器指向中文版社交页
+    src = src.replace('href="/social-media.html"', 'href="/social-media"')
+    # 绝对 URL 同步
+    src = src.replace("https://mrvideo.vip/en/social-media.html", "https://mrvideo.vip/en/social-media")
+    src = src.replace("https://mrvideo.vip/social-media.html", "https://mrvideo.vip/social-media")
+    return src
+
+
 def shorten_nav_labels(src: str) -> str:
     """把顶部导航与抽屉菜单的文案替换为短标签。
 
@@ -390,6 +413,7 @@ def main():
         zh = inject(zh, "lang-switch", switch_block(page, "zh", "header"))
         zh = inject(zh, "lang-switch-drawer", switch_block(page, "zh", "drawer"))
         zh = inject(zh, "lang-switch-footer", switch_block(page, "zh", "footer"))
+        # 中文站保持原始链接形态（源码即模板，需可被字典匹配）
 
         # ---------- 英文站 ----------
         en = build_english(src, meta, missing)
@@ -403,6 +427,7 @@ def main():
         en = inject(en, "lang-switch", switch_block(page, "en", "header"))
         en = inject(en, "lang-switch-drawer", switch_block(page, "en", "drawer"))
         en = inject(en, "lang-switch-footer", switch_block(page, "en", "footer"))
+        en = normalize_links_en(en)
 
         print(f"[{page['name']}] 生成完成" + (f"（残留中文 {len(residue)} 处）" if residue else "（无残留中文）"))
         for r in residue[:20]:
