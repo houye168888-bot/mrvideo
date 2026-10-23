@@ -1,6 +1,6 @@
 # Mr.Video 官网 · Cloudflare Pages 部署指南
 
-本目录为可直接托管的静态网站：`index.html` + `css/` + `js/` + `images/` + `en/`（英文版）。
+本目录为可直接托管的静态网站：`index.html` + `css/` + `js/` + `images/` + `en/`（英文版）+ `my/`（缅甸语版）。
 以下三种方式任选其一，全部免费（Cloudflare Pages Free 额度足够）。
 
 ## 站点结构
@@ -11,16 +11,38 @@
 | `/social-media` | 中文 | 社交媒体管家（Cloudflare clean URL，原 `.html` 会 308 跳转） |
 | `/en/` | English | 英文版首页 |
 | `/en/social-media` | English | 英文版社交媒体管家 |
+| `/my/` | မြန်မာ | 缅甸语版首页 |
+| `/my/social-media` | မြန်မာ | 缅甸语版社交媒体管家 |
 
-**英文版是构建产物，不是手写文件。** 中文 HTML 是唯一内容源，英文版由
-`build_en.py` + `i18n/en.json` 生成。修改中文内容后必须重新执行：
+## 三语构建管线
 
-```bash
-python build_en.py
+**英文版与缅甸语版都是构建产物，不是手写文件。** 中文 HTML 是唯一内容源，
+构建分两个阶段：
+
+```
+中文 HTML（唯一内容源）
+   └─ 阶段 1：i18n/en.json  ──▶  en/*.html   （英文产物）
+          └─ 阶段 2：i18n/my.json  ──▶  my/*.html   （缅语产物）
 ```
 
-构建脚本有两道防脱节保险：缺少翻译直接报错退出；英文版输出后扫描残留中文，
-命中即报错。**请勿直接编辑 `en/` 目录下的文件**，会被下次构建覆盖。
+> **缅甸语为什么以英文版为基准？**
+> 缅语是小语种，若从中文直译会丢失英文语境，且英文改版后缅语无法自动跟随。
+> 因此阶段 2 的输入是阶段 1 生成的英文 HTML，`i18n/my.json` 的键全部是**英文原文**。
+> 中文改动 → 英文重生成 → 缅语自动同步，任何一环缺失都会被构建拦截。
+
+修改中文内容后必须重新执行：
+
+```bash
+python build_i18n.py
+```
+
+构建脚本有三道防脱节保险：
+
+1. **缺翻译即失败** —— 中/英/缅任一阶段遇到未收录文案，直接报错退出；
+2. **残留中文即失败** —— 英/缅产物输出后扫描残留汉字，命中即报错；
+3. **缅语版漏译即失败** —— 缅语产物中出现未翻译的拉丁文本（品牌名、邮箱等白名单除外），命中即报错。
+
+构建是**幂等**的，可重复执行。**请勿直接编辑 `en/` 与 `my/` 目录下的文件**，会被下次构建覆盖。
 
 ---
 
@@ -32,7 +54,7 @@ python build_en.py
 
 1. 打开 https://dash.cloudflare.com → 左侧 **Workers 和 Pages** → 点底部 **Continue to Pages** → **创建项目** → 选择 **直接上传**。
 2. 项目名称填 `mrvideo`（或你喜欢的英文名），点击「创建项目」。
-3. 把本项目里的 `mrvideo-cloudflare-pages.zip` 解压后的内容（或直接把 `index.html`、`css`、`js`、`images` 四个拖进去）拖入上传区，点 **部署**。
+3. 把本项目里的 `mrvideo-cloudflare-pages.zip` 解压后的内容（或直接把 `index.html`、`css`、`js`、`images`、`en`、`my` 拖进去）拖入上传区，点 **部署**。
 4. 几秒后获得 `*.pages.dev` 域名；在「自定义域」里绑定你的正式域名（如 `www.mrvideo.com`）。
 5. 后续更新：重新打包 zip 上传，或改用方式二/三做持续部署。
 
@@ -50,8 +72,8 @@ python build_en.py
    - 构建输出目录：**`/`（根目录）**
 4. 保存并部署。之后每次 `git push` 自动触发重新部署。
 
-> Git 集成部署的是仓库里已提交的静态文件。**英文版 `en/` 需先在本地运行
-> `python build_en.py` 生成后再提交**，否则线上英文版不会更新。
+> Git 集成部署的是仓库里已提交的静态文件。**英文版 `en/` 与缅语版 `my/` 需先在本地运行
+> `python build_i18n.py` 生成后再提交**，否则线上的英文版、缅语版不会更新。
 
 本地已为你初始化好 Git 仓库（`.gitignore` 已排除 `.workbuddy`），你只需：
 ```bash
@@ -81,7 +103,21 @@ wrangler pages deploy .   # 在项目根目录执行
 - [ ] 填入 Google Analytics / Meta Pixel ID（见 `index.html` head 注释位）
 - [ ] 在 Cloudflare 开启 **始终使用 HTTPS** 与 **自动 HTTPS 重写**
 - [ ] 绑定自定义域名并等待证书生效
-- [ ] 修改中文内容后执行 `python build_en.py` 并提交 `en/` 目录
+- [ ] 修改中文内容后执行 `python build_i18n.py`，并提交 `en/` 与 `my/` 目录
+
+---
+
+## 三语切换说明
+
+顶部导航、移动端抽屉、页脚三处均提供「中文 / English / မြန်မာ」三语入口，
+可互相跳转，切换后停留在对应页面的同一位置。
+
+- 桌面端：地球图标 + 当前语言，点击展开下拉菜单（支持 ↑/↓ 键导航、Esc 关闭、点击外部关闭）
+- 移动端：汉堡菜单抽屉内的三个语言胶囊
+- 页脚：三个语言胶囊，当前语言高亮
+
+SEO 方面，三语页面均声明了 `hreflang`（`zh-Hans` / `en` / `my` + `x-default`）、
+`canonical` 与 `og:locale`（`zh_CN` / `en_US` / `my_MM`），互为指向。
 
 ---
 
@@ -90,6 +126,8 @@ wrangler pages deploy .   # 在项目根目录执行
 - 本沙箱环境无法安装 `wrangler`（npm 被限制）且缺少你的 Cloudflare 凭据，
   故由你按上述任一方式完成最终发布；我已把站点整合成即用成品。
 - `mrvideo-cloudflare-pages.zip` 即为「直接上传」所需的完整站点包。
+- 缅语使用 Google Fonts 的 **Noto Sans Myanmar**；若目标访客网络受限导致字体加载失败，
+  会回退到系统缅文字体（Padauk / Myanmar Text），不影响可读性。
 
 ---
 

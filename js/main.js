@@ -16,28 +16,90 @@
 
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- 0) 语言判定（中文站 / 英文站） ---------- */
-  const isEN = (document.documentElement.getAttribute("lang") || "").toLowerCase().startsWith("en");
-  const T = isEN
+  /* ---------- 0) 语言判定（中文站 / 英文站 / 缅文站） ---------- */
+  const htmlLang = (document.documentElement.getAttribute("lang") || "").toLowerCase();
+  const isEN = htmlLang.startsWith("en");
+  const isMY = htmlLang.startsWith("my");
+  const T = isMY
+    ? {
+        switchTo: "ပုံနှင့်အမှတ် ",
+        switchToTail: " သို့ ပြောင်းရန်",
+        viewImg: "ပုံနှင့်အမှတ် ",
+        viewImgTail: " ကို ကြည့်ရှုရန်",
+        errRequired: "မဖြစ်မနေ လိုအပ်သည့် အချက်အလက်များကို ဖြည့်ပါ၊ ဖုန်းနံပါတ်မှန်ကန်ကို သေချာအောင် စစ်ဆေးပါ (ဥပမာ +95 9xxxxxxx)။",
+        okSent: "အောင်မြင်စွာ ပို့သွင်းပြီးပါပြီ! မကြာမီ မိုင်းကို ဆက်သွယ်ပေးပါမည်။",
+      }
+    : isEN
     ? {
         switchTo: "Switch to slide ",
+        switchToTail: "",
         viewImg: "View image ",
+        viewImgTail: "",
         errRequired: "Please fill in the required fields and make sure the phone number is valid (e.g. +95 9xxxxxxx).",
         okSent: "Thank you! We will get back to you shortly.",
       }
     : {
         switchTo: "切换到第 ",
+        switchToTail: " 张",
         viewImg: "查看第 ",
+        viewImgTail: " 张",
         errRequired: "请填写必填项，并确保电话格式正确（如 +95 9xxxxxxx）。",
         okSent: "提交成功！我们会尽快与您联系。",
       };
+
+  /* ---------- 0b) 三语切换器下拉菜单 ---------- */
+  const langSwitchers = Array.from(document.querySelectorAll(".lang-switcher"));
+  function closeAllLangMenus(except) {
+    langSwitchers.forEach((sw) => {
+      if (sw === except) return;
+      sw.classList.remove("open");
+      const btn = sw.querySelector(".lang-switch");
+      if (btn) btn.setAttribute("aria-expanded", "false");
+    });
+  }
+  langSwitchers.forEach((sw) => {
+    const btn = sw.querySelector(".lang-switch");
+    if (!btn) return;
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const willOpen = !sw.classList.contains("open");
+      closeAllLangMenus(sw);
+      sw.classList.toggle("open", willOpen);
+      btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+    });
+    // 键盘导航：上下方向键在菜单项间移动
+    sw.addEventListener("keydown", (e) => {
+      const items = Array.from(sw.querySelectorAll(".lang-menu a"));
+      if (!items.length) return;
+      const cur = items.indexOf(document.activeElement);
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        items[cur < 0 ? 0 : (cur + 1) % items.length].focus();
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        items[cur <= 0 ? items.length - 1 : cur - 1].focus();
+      } else if (e.key === "Escape") {
+        closeAllLangMenus(sw);
+        btn.focus();
+      }
+    });
+  });
+  document.addEventListener("click", () => closeAllLangMenus(null));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeAllLangMenus(null);
+  });
 
   /* ---------- 1) 导航毛玻璃 + 滚动高亮 ---------- */
   const header = document.querySelector(".site-header");
   const hasHero = !!document.querySelector(".hero");
   const navLinks = Array.from(document.querySelectorAll(".main-nav a"));
+  // 仅处理本页锚点（形如 #about）；跨页锚点（/my/#about）不属于本页 section，不参与高亮
+  const isLocalAnchor = (href) => !!href && href.charAt(0) === "#";
   const sections = navLinks
-    .map((a) => document.querySelector(a.getAttribute("href")))
+    .map((a) => {
+      const href = a.getAttribute("href");
+      return isLocalAnchor(href) ? document.querySelector(href) : null;
+    })
     .filter(Boolean);
 
   function onScroll() {
@@ -127,7 +189,7 @@
     slides.forEach((_, i) => {
       const dot = document.createElement("button");
       dot.setAttribute("role", "tab");
-      dot.setAttribute("aria-label", T.switchTo + (i + 1) + (isEN ? "" : " 张"));
+      dot.setAttribute("aria-label", T.switchTo + (i + 1) + T.switchToTail);
       if (i === 0) dot.classList.add("active");
       dot.addEventListener("click", () => goTo(i));
       dotsWrap.appendChild(dot);
@@ -162,7 +224,7 @@
     if (imgs.length < 2 || !dotsWrap) return;
     imgs.forEach((_, i) => {
       const d = document.createElement("button");
-      d.setAttribute("aria-label", T.viewImg + (i + 1) + (isEN ? "" : " 张"));
+      d.setAttribute("aria-label", T.viewImg + (i + 1) + T.viewImgTail);
       if (i === 0) d.classList.add("active");
       d.addEventListener("click", () => goP(i));
       dotsWrap.appendChild(d);
