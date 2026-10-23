@@ -196,7 +196,17 @@ section[id] { scroll-margin-top: 116px; }
 .drawer-close { position: absolute; top: 20px; right: 24px; background: none; border: 0; color: var(--white); font-size: 40px; line-height: 1; cursor: pointer; }
 .drawer-nav { display: flex; flex-direction: column; gap: 6px; }
 .drawer-nav a { color: var(--white); font-size: 22px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-.drawer-cta { margin-top: 24px; justify-content: center; border: 2px solid var(--gold); color: var(--gold); }
+/* 抽屉 CTA 需覆盖 .drawer-nav a 的导航链接样式（优先级 0,1,1）：
+   否则 22px 字号 + 无横向内边距 + 灰色下边框会作用到按钮上，
+   且 nowrap 使「免费咨询 / Free Consultation」在 320-375px 窄屏溢出抽屉。 */
+.drawer-nav .drawer-cta {
+  margin-top: 24px; justify-content: center;
+  border: 2px solid var(--gold); border-radius: var(--radius);
+  color: var(--gold); background: transparent;
+  font-size: 18px; font-weight: 600; line-height: 1.4;
+  padding: 12px 20px; min-height: 48px;
+  white-space: normal; overflow-wrap: break-word;
+}
 .drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 150; opacity: 0; pointer-events: none; transition: opacity .3s; }
 .drawer-overlay.show { opacity: 1; pointer-events: auto; }
 
@@ -633,6 +643,9 @@ section[id] { scroll-margin-top: 116px; }
   .stat { padding: 22px 12px; }
   .stat-num { font-size: 30px; }
   .stat-label { font-size: 14px; }
+  /* 极窄屏收紧抽屉内边距，为导航与 CTA 留出可用宽度 */
+  .drawer { padding: 0 20px; }
+  .drawer-nav .drawer-cta { padding: 12px 12px; font-size: 17px; }
 }
 
 /* ---------- 尊重 reduce-motion ---------- */
