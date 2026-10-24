@@ -46,6 +46,37 @@ python build_i18n.py
 
 ---
 
+## 社交账号关联（Facebook / TikTok / Telegram）
+
+全站 Facebook 链接统一指向官方主页 `https://www.facebook.com/profile.php?id=61595448556166`，
+分布在三个位置（三语均有）：
+
+| 位置 | 形式 | 说明 |
+|---|---|---|
+| 联系区联系列表 | 带图标的文字链接 | 「Facebook」独立一行 |
+| 页脚社交图标 | 圆形图标 | 三语页脚各一处 |
+| 移动端悬浮栏 | 图标 + 文字 | 仅首页，Facebook 品牌蓝 `#1877F2` |
+
+此外每个页面 `<head>` 内注入 **Organization JSON-LD**，通过 schema.org 的 `sameAs` 字段
+把官网与各社交主页声明为同一主体：
+
+```json
+"sameAs": [
+  "https://www.facebook.com/profile.php?id=61595448556166",
+  "https://www.tiktok.com/@mrvideo168",
+  "https://t.me/09973909999"
+]
+```
+
+这是搜索引擎确认「官网 ↔ Facebook 主页互为官方渠道」的标准机制，也是
+Facebook 侧认领官网的依据。
+
+> **换 Facebook 主页怎么办？** 改 `build_i18n.py` 顶部的 `SOCIAL_FACEBOOK` 常量，
+> 再改中文源文件 `index.html` / `social-media.html` 里的 `href`，然后跑 `python build_i18n.py`。
+> 两处都要改，否则图标与结构化数据会不一致。
+
+---
+
 ## 方式一：控制台「直接上传」拖拽（最快，无需 Git / 无命令行）
 
 > **⚠️ 注意：不要点成「Create an app / Workers」。**

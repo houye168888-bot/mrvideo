@@ -271,5 +271,9 @@
     "Mr.Video Academy": "Academy",
     "News & Insights": "News",
     "Contact Us": "Contact"
+  },
+  "jsonld": {
+    "name": "Mr.Video Media",
+    "description": "Mr.Video is a full-service new media agency rooted in Myanmar, operated by a senior China-Myanmar team. Corporate promotion, social media management, new media talent training, short-video e-commerce, omni-channel precision targeting and influencer incubation — from strategy, shooting and editing to media buying and talent development. Only traffic that brings value."
   }
 }

@@ -90,6 +90,38 @@ LANG_HTML = {"zh": "zh-Hans", "en": "en", "my": "my"}
 LANG_HREFLANG = {"zh": "zh-Hans", "en": "en", "my": "my"}
 LANG_OG = {"zh": "zh_CN", "en": "en_US", "my": "my_MM"}
 
+# ---------------------------------------------------------------- 社交账号关联
+# sameAs 是 schema.org 中把网站主体与各社交官方账号"绑定"的标准字段，
+# 搜索引擎据此确认账号归属；Facebook 主页与官网互为官方渠道时可双向验证。
+SOCIAL_FACEBOOK = "https://www.facebook.com/profile.php?id=61595448556166"
+SOCIAL_TIKTOK = "https://www.tiktok.com/@mrvideo168"
+SOCIAL_TELEGRAM = "https://t.me/09973909999"
+SOCIAL_SAME_AS = [SOCIAL_FACEBOOK, SOCIAL_TIKTOK, SOCIAL_TELEGRAM]
+
+# 中文主体信息（英文/缅文见 i18n/en.json 与 i18n/my.json 的 jsonld 段）
+ORG_NAME_ZH = "Mr.Video 传媒"
+ORG_DESC_ZH = (
+    "缅甸新媒体一站式服务专家。业务覆盖企业宣传、社交媒体代运营、新媒体人才培训、"
+    "短视频电商、全域精准投放与网红孵化，只做有价值的流量。"
+)
+ORG_ADDRESS = {
+    "@type": "PostalAddress",
+    "streetAddress": "77st / 32-33",
+    "addressLocality": "Mandalay",
+    "addressCountry": "MM",
+}
+ORG_CONTACT = {
+    "email": "xl17607314666@gmai.com",
+    "telephone": "09965909999",
+}
+
+# 结构化数据（Organization / sameAs）——按语言给出主体名称与描述
+PAGES_META_JSONLD = {
+    "zh": {"name": ORG_NAME_ZH, "description": ORG_DESC_ZH},
+    "en": DICT_EN["jsonld"],
+    "my": DICT_MY["jsonld"],
+}
+
 # ---------------------------------------------------------------- 页面配置
 # 说明：Cloudflare Pages 启用了 clean URLs（/social-media.html → 308 → /social-media），
 # 因此 SEO 声明与站内链接统一使用无扩展名形式，避免多一跳重定向。
@@ -566,6 +598,37 @@ def switch_block(page: dict, cur: str, variant: str) -> str:
     return f'<div class="{cls}" role="group" aria-label="{aria}">' + _lang_links(page, current_code) + "</div>"
 
 
+def jsonld_block(page: dict, lang: str) -> str:
+    """生成 Organization 结构化数据，把官网与 Facebook 等社交主页正式关联。
+
+    sameAs 字段是 schema.org 里声明「同一主体的其他官方账号」的标准做法，
+    搜索引擎据此把官网与 Facebook 主页视为同一实体的不同呈现，
+    也是 Facebook 侧认领官网（官网 ↔ 主页互相验证）的依据。
+    """
+    meta = PAGES_META_JSONLD[lang]
+    canonical = page["site"] + page["urls"][lang]
+
+    data = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": page["site"] + "/#organization",
+        "name": meta["name"],
+        "alternateName": "Mr.Video",
+        "url": canonical,
+        "logo": page["site"] + "/images/logo-wordmark.png",
+        "image": page["site"] + "/images/logo-wordmark.png",
+        "description": meta["description"],
+        "inLanguage": LANG_HTML[lang],
+        "address": ORG_ADDRESS,
+        "email": ORG_CONTACT["email"],
+        "telephone": ORG_CONTACT["telephone"],
+        # ↓ 社交主页关联：Facebook / TikTok / Telegram
+        "sameAs": SOCIAL_SAME_AS,
+    }
+    body = json.dumps(data, ensure_ascii=False, indent=2)
+    return '  <script type="application/ld+json">\n' + body + "\n  </script>"
+
+
 def head_block(page: dict, lang: str) -> str:
     """生成 canonical / og:url / og:locale / hreflang（三种语言互指）。"""
     abs_urls = {c: page["site"] + page["urls"][c] for c in LANG_ORDER}
@@ -585,7 +648,8 @@ def head_block(page: dict, lang: str) -> str:
         f"{og_alt}\n"
         f'  <link rel="canonical" href="{canonical}" />\n'
         f"{hreflang}\n"
-        f'  <link rel="alternate" hreflang="x-default" href="{abs_urls["zh"]}" />'
+        f'  <link rel="alternate" hreflang="x-default" href="{abs_urls["zh"]}" />\n'
+        f"{jsonld_block(page, lang)}"
     )
 
 
